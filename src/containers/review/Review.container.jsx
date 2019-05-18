@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setBgClassName } from '../../actions/app.actions';
 
-import styles from './Contribute.module.scss';
+import styles from './Review.module.scss';
 
-const Contribute = (props) => {
+const Review = (props) => {
     useEffect(() => {
         props.setBgClassName('bgGreen');
     }, []);
@@ -17,8 +17,8 @@ const Contribute = (props) => {
     );
 };
 
-Contribute.propTypes = {
+Review.propTypes = {
     setBgClassName: PropTypes.func,
 };
 
-export default connect(null, { setBgClassName })(Contribute);
+export default connect(null, { setBgClassName })(Review);
