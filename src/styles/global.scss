@@ -1,0 +1,36 @@
+@import './fonts';
+@import './variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+html,body {
+  height: 100%
+}
+
+body {
+    background-color: $background;
+    color: $black;
+    font-size: 1.5rem;
+}
+
+.bgDefault {
+    background: rgb(139,137,130);
+    background: linear-gradient(90deg, rgba(240,238,230,1) 0%, rgba(230,200,188,1) 36%, rgba(230,221,188,1) 100%);
+}
+.bgGreen {
+    background: rgb(240,238,230);
+    background: linear-gradient(90deg, rgba(155,233,55,1) 0%, rgba(26,241,124,1) 36%, rgba(0,236,236,1) 100%);
+}
+.bgBlue {
+    background: rgb(240,238,230);
+    background: linear-gradient(90deg, rgb(83, 53, 252) 0%, rgba(45,50,248,1) 36%, rgba(0,224,252,1) 100%);
+}
+.bgOrange {
+    background: rgb(240,238,230);
+    background: linear-gradient(90deg, rgb(255, 112, 167) 0%, rgb(250, 101, 50) 36%, rgba(255,163,0,1) 100%);
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
