@@ -1,4 +1,6 @@
-> 👋 I'm Amos. I'm trying to meet people that would sort the web's learning resources. If you'd like to help out, go ahead and submit a Review for your favorite learning resources 😝
+## 👋 I'm Amos
+
+> I'm trying to meet people that would sort the web's learning resources. If you'd like to help out, go over to [amos.ms](https://amos.ms) and submit a Review for your favorite learning resources 😝
 > 
 > <cite>[Amos](https://www.wikiwand.com/en/John_Amos_Comenius)</cite>
 
@@ -6,11 +8,11 @@
 > 
 > <cite>[Amos](https://www.wikiwand.com/en/John_Amos_Comenius)</cite>
 
-> So I need your help! Introduce me to your friends. My address is amos.ms, World Wide Web... Let's keep this product alive 😉
+> So I need your help! Introduce me to your friends. My address is [amos.ms](https://amos.ms), World Wide Web... Let's keep this product alive 😉
 > 
 > <cite>[Amos](https://www.wikiwand.com/en/John_Amos_Comenius)</cite>
 
-Check out [http://solvio.org](http://solvio.org) for more info.
+Check out [solvio.org](http://solvio.org) for more info.
 
 ## Contributors
 
