@@ -1,0 +1,16 @@
+@mixin anim-brdr-b($border-width, $color) {
+    position: relative;
+    transform: perspective(1px) translateZ(0);
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 51%; right: 51%; bottom: 2px;
+        background-color: $color;
+        height: $border-width;
+        transition: 0.4s left ease-out, 0.4s right ease-out;
+    }
+    &:hover:before, &:focus:before, &.active:before {
+        left: 0; right: 0;
+    }
+}

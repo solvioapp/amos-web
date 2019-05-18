@@ -1,0 +1,36 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.header {
+    padding: 20px;
+    display: flex;
+    align-content: space-between;
+
+    .logo {
+        flex: 1;
+        font-weight: bold;
+        display: inline-block;
+        color: $white;
+    }
+
+    nav.links {
+        flex: 1;
+        text-align: center;
+        display: inline;
+    }
+
+    nav.icons {
+        flex: 1;
+        text-align: right;
+        display: inline;
+    }
+
+    nav a {
+        @include anim-brdr-b(3px, rgba(255,255,255,.6));
+        text-transform: uppercase;
+        padding: 10px;
+        font-weight: bold;
+        color: $white;
+        svg { fill: $white; }
+    }
+}

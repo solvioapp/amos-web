@@ -1,0 +1,12 @@
+@import '../styles/variables';
+
+.wrapper {
+    min-height: 100%;
+}
+.container {
+    border-radius: 10px;
+    padding: 10px 20px;
+    max-width: 972px;
+    background: $background;
+    box-shadow: 0 0 20px rgba(0,0,0, .1);
+}
