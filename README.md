@@ -14,6 +14,26 @@
 
 Check out [solvio.org](http://solvio.org) for more info.
 
+## Run
+
+Post this into your terminal:
+
+```
+git clone https://github.com/solviofoundation/amos-web && \
+cd amos-web && \
+yarn install && \
+yarn start
+```
+
+or
+
+```
+git clone https://github.com/solviofoundation/amos-web && \
+cd amos-web && \
+npm install && \
+npm run-script start
+```
+
 ## Contributors
 
 - [Evgeny Korotenko](https://github.com/BotaniQue)
