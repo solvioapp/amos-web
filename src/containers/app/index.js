@@ -1,30 +1,34 @@
-import Content from './content.sc'
-import Footer from 'components/footer'
-import Header from 'components/header'
-import NotFound from 'containers/not-found'
-import PageLayout from './page-layout.sc'
+import NotFound from 'components/not-found'
+import PageLayout from 'components/page-layout'
 import Proposals from 'containers/proposals'
 import React from 'react'
 import Review from 'containers/review'
 import Search from 'containers/search'
-import {Redirect, Route, Switch} from 'react-router-dom'
+import store from 'store'
+import {Provider} from 'react-redux'
+import {Redirect, Switch} from 'react-router-dom'
+import {Route, Router} from 'react-router-dom'
+import {createBrowserHistory} from 'history'
+
+const history = createBrowserHistory()
 
 const App = () => (
-  <PageLayout>
-    <Header/>
-    <Content>
-      <Switch>
-        <Route path="/search" exact component={Search}/>
-        <Route path="/review" exact component={Review}/>
-        <Route path="/proposals" exact component={Proposals}/>
-        <Route path="/notifications" exact component={NotFound}/>
-        <Route path="/profile" exact component={NotFound}/>
-        <Route path="/settings" exact component={NotFound}/>
-        <Redirect from="/" to="search"/>
-      </Switch>
-    </Content>
-    <Footer/>
-  </PageLayout>
+  <Provider store={store}>
+    <Router history={history}>
+      <PageLayout>
+        <Switch>
+          <Route path="/search" component={Search}/>
+          <Route path="/review" component={Review}/>
+          <Route path="/proposals" component={Proposals}/>
+          <Route path="/notifications" component={NotFound}/>
+          <Route path="/profile" component={NotFound}/>
+          <Route path="/settings" component={NotFound}/>
+          <Redirect exact from="/" to="search"/>
+          <Route component={NotFound}/>
+        </Switch>
+      </PageLayout>
+    </Router>
+  </Provider>
 )
 
 export default App
