@@ -14,25 +14,45 @@
 
 Check out [solvio.org](http://solvio.org) for more info.
 
-## Run
+<br/>
 
-Post this into your terminal:
+## Getting started
+Don't warry be magic 🧙‍
 
+🧙‍ Three magic lines to get the project:
+```sh
+git clone git@github.com:dmytroletuchiy/bycycle.git
+cd chat-demo
+npm i
 ```
-git clone https://github.com/solviofoundation/amos-web && \
-cd amos-web && \
-yarn install && \
-yarn start
+<br/>
+
+🧙‍ Two magic commands to start:
+```sh
+npm run build
+npm run server
+```
+<br/>
+
+🔗 One magic link to get involved: [http://localhost:3000](http://localhost:3000/)
+<br/>
+<br/>
+
+## Development enviroment
+🔥 DevServer with hot reloads on every change:
+```sh
+npm start
 ```
 
-or
+🔗 [http://localhost:8080](http://localhost:8080/)
 
+<br/>
+
+On another terminal run server:
+```sh
+npm run server
 ```
-git clone https://github.com/solviofoundation/amos-web && \
-cd amos-web && \
-npm install && \
-npm run-script start
-```
+<br/>
 
 ## Contributors
 
