@@ -1,17 +1,16 @@
 import {DONT_BE_EVIL} from './actions'
+import {createReducer} from 'common/utils'
 import {set} from 'common/lens'
 
 const initialState = {
   slogan: `🍏 Think Different.`
 }
 
-function proposalReducer(state = initialState, action) {
-  switch (action.type) {
-    case DONT_BE_EVIL: {
-      return set(`slogan`, `Be good!`)
-    }
-    default: return state
-  }
-}
+const dontBeEvil = () => set(`slogan`, `Be good!`)
+
+const proposalReducer = createReducer(
+  initialState,
+  [DONT_BE_EVIL, dontBeEvil],
+)
 
 export default proposalReducer

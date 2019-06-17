@@ -1,6 +1,10 @@
 const req = require.context(`.`, true, /\.svg$/)
 
-req.keys().forEach(key => {
+const iconList = req.keys().reduce((list, key) => {
   const icon = key.replace(/\.\/(.+).svg/, `$1`)
-  module.exports[icon] = req(key).default
-})
+  list[icon] = req(key).default
+
+  return list
+}, {})
+
+export default iconList
