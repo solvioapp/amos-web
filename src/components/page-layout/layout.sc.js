@@ -5,10 +5,6 @@ const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-  }
 `
 
 export default PageLayout
