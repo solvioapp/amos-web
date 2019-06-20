@@ -6,9 +6,9 @@ import NavMenu from 'components/nav-menu'
 import React from 'react'
 import Row from 'components/page-layout/row.sc'
 
-const PageLayout = ({children}) => (
+const PageLayout = ({isAuthenticated, children}) => (
   <Layout>
-    <NavMenu/>
+    <NavMenu isAuthenticated={isAuthenticated}/>
     <Content>{children}</Content>
     <Footer/>
   </Layout>
@@ -16,7 +16,4 @@ const PageLayout = ({children}) => (
 
 export default PageLayout
 
-export {
-  Col,
-  Row
-}
+export {Col, Row}
