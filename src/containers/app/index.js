@@ -20,10 +20,7 @@ const App = () => (
           <Redirect exact from="/" to="review"/>
           <Route path="/review" component={Review}/>
           <Route path="/search" component={Search}/>
-          <Route path="/proposals" component={SignUp}/>
-          <Route path="/notifications" component={NotFound}/>
-          <Route path="/profile" component={NotFound}/>
-          <Route path="/settings" component={NotFound}/>
+          <Route path="/sign-up" component={SignUp}/>
           <Route component={NotFound}/>
         </Switch>
       </PageLayout>
