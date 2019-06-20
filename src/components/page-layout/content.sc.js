@@ -1,14 +1,17 @@
 import styled from 'styled-components'
 
 const Content = styled.div`
-  align-self: center;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  flex-grow: 1;
-  max-width: 972px;
-  padding: 10px 20px;
-  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
 `
 
 export default Content
