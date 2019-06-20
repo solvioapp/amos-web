@@ -3,15 +3,13 @@ import Footer from 'components/footer'
 import Header from 'components/header'
 import Layout from './layout.sc'
 import React from 'react'
-import Container from '@material-ui/core/Container'
-import BottomNavigationLinks from '../bottom-navigation';
+import BottomNavigationLinks from '../bottom-navigation'
+import Container from '../container/container.sc'
 
 const PageLayout = ({children}) => (
   <Layout>
     <Header/>
-    <Container>
-      {children}
-    </Container>
+    <Container>{children}</Container>
     <Footer/>
     <BottomNavigationLinks />
   </Layout>

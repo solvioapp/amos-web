@@ -7,6 +7,7 @@ const Header = styled.header`
   border-bottom: 1px solid #d3d3d3;
   @media (max-width: 768px) {
     border-bottom: none;
+    display: none;
   }
 `
 

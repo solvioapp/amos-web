@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-const Icons = styled.div`
+const Icons = styled.div `
   > a {
-    color: white;
+    color: black;
     cursor: pointer;
   }
-
   > a + a {
     margin-left: 16px;
   }

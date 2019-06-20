@@ -5,7 +5,6 @@ import Icons from './icons.sc'
 import NavLink from './nav-link.sc'
 import NavMenu from './nav-menu.sc'
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 const AppHeader = () => (
   <Header>
@@ -16,9 +15,9 @@ const AppHeader = () => (
       <NavLink to="/proposals">Proposals</NavLink>
     </NavMenu>
     <Icons>
-      <Link to="/notifications"><Icon src="bell"/></Link>
-      <Link to="/profile"><Icon src="user"/></Link>
-      <Link to="/settings"><Icon src="settings"/></Link>
+      <NavLink to="/notifications"><Icon src="bell"/></NavLink>
+      <NavLink to="/profile"><Icon src="user"/></NavLink>
+      <NavLink to="/settings"><Icon src="settings"/></NavLink>
     </Icons>
   </Header>
 )

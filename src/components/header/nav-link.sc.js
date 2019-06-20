@@ -10,14 +10,14 @@ const Link = styled(NavLink)`
   padding: 0px 10px;
 
   &.active {
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid #d3d3d3; */
     color: #0066ff
   }
   & + & {
     margin-left: 16px;
   }
   @media (max-width: 768px) {
-    display: none;
+    font-size: 14px
   }
 `
 
