@@ -1,3 +1,10 @@
+/*
+  Use SignUp instead of Login or Register components should match what we have in out UI.
+  Split styles into separate files.
+  Use better semantic names for components:
+   instead ButtonDiv -> Splitter | Spacer
+*/
+
 import React from 'react'
 import styled from 'styled-components'
 
@@ -17,17 +24,16 @@ const ButtonDiv = styled.div`
 `
 
 export default function LoginRegister() {
-    return (
-        <div>
-            <ButtonDiv>
-                
-            </ButtonDiv>
-            <ButtonDiv>OR</ButtonDiv>
-            <LoginRegisterText>
-                <LinkText>Sign up with email</LinkText>
-                &nbsp;<span>&#9679;</span>&nbsp;
-                <LinkText>Log in with email</LinkText>
-            </LoginRegisterText>
-        </div>
-    )
+  return (
+    <div>
+      <ButtonDiv>
+      </ButtonDiv>
+      <ButtonDiv>OR</ButtonDiv>
+      <LoginRegisterText>
+        <LinkText>Sign up with email</LinkText>
+        &nbsp;<span>&#9679;</span>&nbsp;
+        <LinkText>Log in with email</LinkText>
+      </LoginRegisterText>
+    </div>
+  )
 }

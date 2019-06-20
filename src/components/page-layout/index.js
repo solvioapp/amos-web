@@ -1,18 +1,22 @@
-// import Content from './content.sc'
+import Col from 'components/page-layout/column.sc'
+import Content from './content.sc'
 import Footer from 'components/footer'
-import Header from 'components/header'
 import Layout from './layout.sc'
+import NavMenu from 'components/nav-menu'
 import React from 'react'
-import BottomNavigationLinks from '../bottom-navigation'
-import Container from '../container/container.sc'
+import Row from 'components/page-layout/row.sc'
 
 const PageLayout = ({children}) => (
   <Layout>
-    <Header/>
-    <Container>{children}</Container>
+    <NavMenu/>
+    <Content>{children}</Content>
     <Footer/>
-    <BottomNavigationLinks />
   </Layout>
 )
 
 export default PageLayout
+
+export {
+  Col,
+  Row
+}

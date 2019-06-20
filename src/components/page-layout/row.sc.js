@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 const Row = styled.div`
   &::after{
-    content: "";
     clear: both;
+    content: "";
     display: block;
   }
 `
