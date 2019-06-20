@@ -3,31 +3,29 @@ import styled from 'styled-components'
 
 const LoginRegisterText = styled.p`
   font-size: 16px;
-  text-align: center
+  text-align: center;
   @media (max-width: 768px) {
     margin-bottom: 5rem
   }
 `
 const LinkText = styled.span`
-  cursor: pointer
+  cursor: pointer;
 `
 const ButtonDiv = styled.div`
   text-align: center;
-  margin-top: 16px
+  margin-top: 16px;
 `
 
 export default function LoginRegister() {
-    return (
-        <div>
-            <ButtonDiv>
-                
-            </ButtonDiv>
-            <ButtonDiv>OR</ButtonDiv>
-            <LoginRegisterText>
-                <LinkText>Sign up with email</LinkText>
-                &nbsp;<span>&#9679;</span>&nbsp;
-                <LinkText>Log in with email</LinkText>
-            </LoginRegisterText>
-        </div>
-    )
+  return (
+    <div>
+      <ButtonDiv>Buttons</ButtonDiv>
+      <ButtonDiv>OR</ButtonDiv>
+      <LoginRegisterText>
+        <LinkText>Sign up with email</LinkText>
+        &nbsp;<span>&#9679;</span>&nbsp;
+        <LinkText>Log in with email</LinkText>
+      </LoginRegisterText>
+    </div>
+  )
 }
