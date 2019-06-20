@@ -21,8 +21,8 @@ Don't warry be magic 🧙‍
 
 🧙‍ Three magic lines to get the project:
 ```sh
-git clone git@github.com:dmytroletuchiy/bycycle.git
-cd chat-demo
+git clone https://github.com/solviofoundation/amos-web.git
+cd amos-web
 npm i
 ```
 <br/>
@@ -53,8 +53,3 @@ On another terminal run server:
 npm run server
 ```
 <br/>
-
-## Contributors
-
-- [Evgeny Korotenko](https://github.com/BotaniQue)
-- [Dominik Teiml](https://github.com/dteiml)
