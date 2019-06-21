@@ -65,6 +65,9 @@ const develop = {
   devServer: {
     historyApiFallback: true
   },
+  output: {
+    publicPath: `/`
+  },
   plugins: [
     new CopyPlugin([{
       from: rootPath(`./public`)

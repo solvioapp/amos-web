@@ -2,6 +2,7 @@ import * as R from 'ramda'
 import React from 'react'
 import connect from './connect'
 import {useState} from 'react'
+import {Redirect} from 'react-router-dom'
 
 const makeInput = ([state, setState]) => (name, type) => {
   const onChange = event => {
@@ -21,19 +22,19 @@ const makeInput = ([state, setState]) => (name, type) => {
   )
 }
 
-function SignIn({authorize, isAuthenticated, history}) {
-  if (isAuthenticated === true) {
-    window.requestAnimationFrame(() =>
-      history.push(`/`)
-    )
-    return <div>Redirecting...</div>
+const url = R.pathOr(`/`, [`location`, `state`, `from`])
+
+function SignIn(props) {
+  if (props.isAuthenticated) {
+    return <Redirect to={url(props)}/>
   }
-  const state = useState({email: `admin`, password: ``})
+
+  const state = useState({email: `admin`, password: `123`})
   const input = makeInput(state)
   const onSubmit = event => {
     event.preventDefault()
     const [{email, password}] = state
-    authorize(email, password)
+    props.authorize(email, password)
   }
 
   return (

@@ -6,8 +6,8 @@ const NavMenu = ({isAuthenticated}) => (
   <Menu>
     <Link to="/review">Review</Link>
     <Link to="/search">Search</Link>
-    <Link to="/topics" hidden={!isAuthenticated}>
-      Topics
+    <Link to="/notifications" hidden={!isAuthenticated}>
+      Notifications
     </Link>
     <Link to="/sign-up" hidden={isAuthenticated}>
       Sign up

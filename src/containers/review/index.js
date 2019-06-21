@@ -1,34 +1,31 @@
+import * as R from 'ramda'
+import Guest from './guest'
+import LearnRequire from './learn-require'
+import Links from './links'
 import React from 'react'
+import Thanks from './thanks'
+import Topics from './topics'
 import connect from './connect'
-import styled from 'styled-components'
-import {Row, Col} from 'components/page-layout'
-import {css} from 'styled-components'
-import {ifProp} from 'common/style'
+import {Switch, Redirect, Route} from 'react-router-dom'
 
-const Panel = styled.div`
-  margin-top: 15%;
-  @media (max-width: 768px) {
-    margin-top: 0px;
+const redirect = R.both(
+  R.propEq(`isAuthenticated`, true),
+  R.pathEq([`location`, `pathname`], `/review`)
+)
+
+function Review(props) {
+  if (redirect(props)) {
+    return <Redirect to="/review/links"/>
   }
-`
 
-const primary = css`
-  background-color: blue;
-`
-
-const Div = styled.div`
-  background-color: yellow;
-  ${ifProp(`primary`, primary, ``)}
-`
-
-function Review({slogan}) {
   return (
-    <Panel>
-      <Row>
-        <Col xs="12" sm="7" md="6" lg="4"><Div>{slogan}</Div></Col>
-        <Col xs="12" sm="5" md="4" lg="6"><Div primary>{slogan}</Div></Col>
-      </Row>
-    </Panel>
+    <Switch>
+      <Route path="/review" component={Guest} exact/>
+      <Route path="/review/links" component={Links}/>
+      <Route path="/review/topics" component={Topics}/>
+      <Route path="/review/requirements" component={LearnRequire}/>
+      <Route path="/review/thanks" component={Thanks}/>
+    </Switch>
   )
 }
 

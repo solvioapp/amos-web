@@ -1,10 +1,10 @@
 import Authorized from './authorized'
 import Guest from './guest'
 import React from 'react'
-import connect from './connect'
+import connect from '../connect'
 
-const Search = ({isAuthenticated}) => (
+const LearnRequire = ({isAuthenticated}) => (
   isAuthenticated ? <Authorized/> : <Guest/>
 )
 
-export default connect(Search)
+export default connect(LearnRequire)
