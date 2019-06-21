@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import {NavLink} from 'react-router-dom'
+import {ifProp} from 'common/style'
 
 const Link = styled(NavLink)`
   color: black;
+  display: ${ifProp(`hidden`, `none`, `inline`)};
   font-size: 20px;
   font-weight: 500;
   padding: 0px 10px;
