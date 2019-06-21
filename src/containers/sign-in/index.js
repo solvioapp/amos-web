@@ -22,16 +22,19 @@ const makeInput = ([state, setState]) => (name, type) => {
   )
 }
 
-function SignIn({authorize, isAuthenticated}) {
-  if (isAuthenticated) {
-    return <Redirect to="/"/>
+const url = R.pathOr(`/`, [`location`, `state`, `from`])
+
+function SignIn(props) {
+  if (props.isAuthenticated) {
+    return <Redirect to={url(props)}/>
   }
+
   const state = useState({email: `admin`, password: `123`})
   const input = makeInput(state)
   const onSubmit = event => {
     event.preventDefault()
     const [{email, password}] = state
-    authorize(email, password)
+    props.authorize(email, password)
   }
 
   return (
