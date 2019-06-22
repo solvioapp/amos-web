@@ -1,15 +1,25 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {Auth} from 'constants/chat'
+import createChatBoxes from 'common/createChatBoxes'
+import Aux from 'components/aux'
+import {Col} from 'components/page-layout'
+import Heading from 'components/heading'
+import Input from 'components/input'
+import Button from 'components/btn'
 import connect from './connect'
 
 const Email = ({login}) => (
-  <div>
-    <h1>Sign up with email</h1>
-    <p>Fake form by pressing you will be logged.</p>
-    <Link onClick={login} to="/sign-up/success">
-      Sign up
-    </Link>
-  </div>
+  <Aux>
+    <Col>
+      <Heading>Sign up</Heading>
+      {createChatBoxes(Auth.SignUp)}
+      <Input />
+      <Input />
+      <Input />
+      <Button type='AUTH/SIGN-UP' onClick={login}/>
+    </Col>
+  </Aux>
 )
 
 export default connect(Email)

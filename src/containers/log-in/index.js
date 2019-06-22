@@ -3,6 +3,15 @@ import React from 'react'
 import connect from './connect'
 import {useState} from 'react'
 import {Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import {Auth} from 'constants/chat'
+import createChatBoxes from 'common/createChatBoxes'
+import Aux from 'components/aux'
+import {Col} from 'components/page-layout'
+import Heading from 'components/heading'
+import Input from 'components/input'
+import Button from 'components/btn'
+
 
 const makeInput = ([state, setState]) => (name, type) => {
   const onChange = event => {
@@ -24,7 +33,7 @@ const makeInput = ([state, setState]) => (name, type) => {
 
 const url = R.pathOr(`/`, [`location`, `state`, `from`])
 
-function SignIn(props) {
+function LogIn(props) {
   if (props.isAuthenticated) {
     return <Redirect to={url(props)}/>
   }
@@ -38,19 +47,20 @@ function SignIn(props) {
   }
 
   return (
-    <div>
-      <h1>Fake login form</h1>
-      <p>
-        Purpose of this form is to test PrivateRoute.<br/>
-        Use password <code>123</code> to sign in.
-      </p>
-      <form onSubmit={onSubmit}>
-        {input(`email`, `text`)}
-        {input(`password`, `password`)}<br/><br/>
-        <input type="submit" value="SIGN IN"/>
-      </form>
-    </div>
+    <Aux>
+      <Col>
+        <Heading>Log in</Heading>
+        {createChatBoxes(Auth.LogIn)}
+        <p>Purpose of this form is to test PrivateRoute.<br/>
+        Use password <code>123</code> to sign in.</p>
+        <form onSubmit={onSubmit}>
+          {input(`email`, `text`)}
+          {input(`password`, `password`)}<br/><br/>
+          <input type="submit" value="LOG IN"/>
+        </form>
+      </Col>
+    </Aux>
   )
 }
 
-export default connect(SignIn)
+export default connect(LogIn)

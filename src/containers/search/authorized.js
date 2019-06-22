@@ -1,11 +1,17 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+
+import {Col} from 'components/page-layout'
+import createChatBoxes from 'common/createChatBoxes'
+import {Search} from 'constants/chat'
+import Auth from 'components/auth'
+import Aux from 'components/aux'
 
 const Authorized = () => (
-  <div>
-    💳 Authorized Search <br/>
-    <Link to="/review">Submit a Review</Link>
-  </div>
+  <Aux>
+    <Col>
+      {createChatBoxes(Search.Authorized)}
+    </Col>
+  </Aux>
 )
 
 export default Authorized
