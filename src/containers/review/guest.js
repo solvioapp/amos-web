@@ -4,7 +4,7 @@ import {Col} from 'components/page-layout'
 import createChatBoxes from 'common/createChatBoxes';
 import {Review} from 'constants/chat'
 import AuthBox from 'components/auth'
-import Aux from 'components/aux'
+import Aux from 'components/auxiliary'
 import Button from 'components/btn'
 
 const Guest = () => (

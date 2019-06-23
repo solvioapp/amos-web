@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import Aux from 'components/aux'
+import Aux from 'components/auxiliary'
 
 const AuthBox = props => (
   <Aux>

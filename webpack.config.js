@@ -65,10 +65,12 @@ const common = {
 
 const develop = {
   mode: `development`,
-  // ErrorOverlayPlugin doesn't work with `eval-source-map`
   devtool: `cheap-module-source-map`,
   devServer: {
     historyApiFallback: true,
+  },
+  output: {
+    publicPath: `/`
   },
   plugins: [
     new CopyPlugin([{
