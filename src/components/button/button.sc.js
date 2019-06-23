@@ -1,21 +1,40 @@
-import styled from 'styled-components'
-import {prop} from 'common/style'
+import styled, {css} from 'styled-components'
+import {ifProp, prop} from 'common/style'
+
+const primary = css`
+  background-color: #6558f5;
+  border: 1px solid #6558f5;
+  color: white;
+
+  &:hover {
+    background-color: #7b70f9;
+  }
+`
+
+const iconOnly = css`
+  font-size: 0;
+  padding: 0;
+  width: 40px;
+
+  > svg {
+    height: 17px;
+  }
+`
 
 const Button = styled.button`
-  background-color: #6558f5;
+  background-color: white;
   border-radius: 3px;
-  border: 0;
-  color: white;
+  border: 1px solid #959595;
+  color: black;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   height: ${prop(`height`, `40px`)};
   padding: 0 30px;
   user-select: none;
   width: ${prop(`width`)};
 
   > svg {
-    fill: white;
-    height: 16px;
+    height: 15px;
   }
   > span {
     vertical-align: middle;
@@ -28,11 +47,14 @@ const Button = styled.button`
     transform: scale(0.98);
   }
   &:hover {
-    background-color: #7b70f9;
+    background-color: #fafafc;
   }
   &:focus {
     outline: none;
   }
+
+  ${ifProp(`primary`, primary)}
+  ${ifProp(`iconOnly`, iconOnly)}
 `
 
 export default Button

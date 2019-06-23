@@ -3,7 +3,7 @@ import Icon from '../icon'
 import React from 'react'
 
 const SexyButton = ({icon, children, ...rest}) => (
-  <Button {...rest}>
+  <Button iconOnly={icon && !children} {...rest}>
     {icon && <Icon src={icon}/>}
     {children && <span>{children}</span>}
   </Button>
