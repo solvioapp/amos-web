@@ -1,12 +1,12 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {Review} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
 import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
+import Button from 'components/button'
 import Heading from 'components/heading'
 import Input from 'components/input'
-import Button from 'components/btn'
+import React from 'react'
+import createChatBoxes from 'common/createChatBoxes'
+import {Col} from 'components/page-layout'
+import {Review} from 'constants/chat'
+import {navto} from 'common/history'
 
 const Guest = () => (
   <Aux>
@@ -14,7 +14,9 @@ const Guest = () => (
       {createChatBoxes(Review.Links)}
       <Heading>Links</Heading>
       <Input />
-      <Link to="/review/topics"><Button type='REVIEW/NEXT' /></Link>
+      <Button icon="user" onClick={navto(`/review/topics`)}>
+        Next
+      </Button>
     </Col>
   </Aux>
 )
