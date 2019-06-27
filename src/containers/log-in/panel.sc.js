@@ -3,7 +3,8 @@ import styled from 'styled-components'
 const Panel = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 550px;
+  max-width: 550px;
+  width: 100%;
 
   > div + input {
     margin-top: 40px;
