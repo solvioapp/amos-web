@@ -1,13 +1,16 @@
+import Button from 'components/button'
+import Panel from './panel.sc'
 import React from 'react'
+import Title from 'components/title'
 import connect from './connect'
 
 const Notifications = ({logout}) => (
-  <div>
-    <h1>Notifications</h1>
-    <button onClick={logout}>
+  <Panel>
+    <Title>Notifications</Title>
+    <Button onClick={logout}>
       Logout
-    </button>
-  </div>
+    </Button>
+  </Panel>
 )
 
 export default connect(Notifications)

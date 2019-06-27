@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const NavMenu = styled.div`
+const Menu = styled.div`
   padding: 20px;
   text-align: center;
 
@@ -9,4 +9,4 @@ const NavMenu = styled.div`
   }
 `
 
-export default NavMenu
+export default Menu

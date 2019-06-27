@@ -6,9 +6,7 @@ import store from 'store'
 import {I18nextProvider} from 'react-i18next'
 import {Provider} from 'react-redux'
 import {Router} from 'react-router-dom'
-import {createBrowserHistory} from 'history'
-
-const history = createBrowserHistory()
+import {history} from 'common/history'
 
 const App = () => (
   <Provider store={store}>

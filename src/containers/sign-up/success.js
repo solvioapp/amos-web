@@ -1,11 +1,24 @@
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
+import Monolog from './monolog.sc'
+import Panel from './panel.sc'
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {navto} from 'common/history'
+
+const messages = [
+  `Thanks for trusting me. 🤓`,
+  `Now - let's get to work! 🖌 📚Go ahead and`,
+]
 
 const Success = () => (
-  <div>
-    Thanks for trusting me. 🤓 <br/>
-    <Link to="/review">Submit a Review</Link>
-  </div>
+  <Panel>
+    <Monolog>
+      <AmosChat>{messages}</AmosChat>
+      <Button primary onClick={navto(`/review`)}>
+        Submit review
+      </Button>
+    </Monolog>
+  </Panel>
 )
 
 export default Success

@@ -1,12 +1,25 @@
+import AmosChat from 'components/amos-chat'
+import AuthBox from 'components/auth-box'
+import Button from 'components/button'
+import Monolog from './monolog.sc'
+import Panel from './panel.sc'
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {navto} from 'common/history'
 
 const Guest = () => (
-  <div>
-    <Link to="/sign-up/email">Sign up with email</Link>
-    {` • `}
-    <Link to="/sign-in">Sign in with email</Link>
-  </div>
+  <Panel>
+    <Monolog>
+      <AmosChat>
+        Here you can add reviews for online learning resources - either anonymously or
+        by signing up. I would recommended signing up first because then you can get reputation
+        for your reviews. 🙂
+      </AmosChat>
+      <Button primary onClick={navto(`/review/links`)}>
+        Submit anonymously
+      </Button>
+    </Monolog>
+    <AuthBox/>
+  </Panel>
 )
 
 export default Guest
