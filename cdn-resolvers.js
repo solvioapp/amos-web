@@ -15,6 +15,24 @@ function resolve(name, version) {
       version
     },
     {
+      name: `i18next`,
+      var: `i18next`,
+      url: `https://unpkg.com/i18next@${version}/dist/umd/i18next.min.js`,
+      version
+    },
+    {
+      name: `i18next-browser-languagedetector`,
+      var: `i18nextBrowserLanguageDetector`,
+      url: `https://unpkg.com/i18next-browser-languagedetector@${version}/dist/umd/i18nextBrowserLanguageDetector.min.js`,
+      version
+    },
+    {
+      name: `react-i18next`,
+      var: `ReactI18next`,
+      url: `https://unpkg.com/react-i18next@${version}/dist/umd/react-i18next.min.js`,
+      version
+    },
+    {
       name: `react-redux`,
       var: `ReactRedux`,
       url: `https://unpkg.com/react-redux@${version}/dist/react-redux.min.js`,

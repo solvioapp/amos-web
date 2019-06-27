@@ -1,35 +1,24 @@
-import NotFound from 'components/not-found'
 import PageLayout from './page-layout'
-import PrivateRoute from './private-route'
 import React from 'react'
-import Review from 'containers/review'
-import Search from 'containers/search'
-import Notifications from 'containers/notifications'
-import SignUp from 'containers/sign-up'
-import SignIn from 'containers/sign-in'
+import Routes from './routes'
+import i18n from '../../locales'
 import store from 'store'
+import {I18nextProvider} from 'react-i18next'
 import {Provider} from 'react-redux'
-import {Redirect, Switch} from 'react-router-dom'
-import {Route, Router} from 'react-router-dom'
+import {Router} from 'react-router-dom'
 import {createBrowserHistory} from 'history'
 
 const history = createBrowserHistory()
 
 const App = () => (
   <Provider store={store}>
-    <Router history={history}>
-      <PageLayout>
-        <Switch>
-          <Redirect from="/" to="review" exact/>
-          <Route path="/review" component={Review}/>
-          <Route path="/search" component={Search}/>
-          <Route path="/sign-in" component={SignIn}/>
-          <Route path="/sign-up" component={SignUp}/>
-          <PrivateRoute path="/notifications" component={Notifications}/>
-          <Route component={NotFound}/>
-        </Switch>
-      </PageLayout>
-    </Router>
+    <I18nextProvider i18n={i18n}>
+      <Router history={history}>
+        <PageLayout>
+          <Routes/>
+        </PageLayout>
+      </Router>
+    </I18nextProvider>
   </Provider>
 )
 
