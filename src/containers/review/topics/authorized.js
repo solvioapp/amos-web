@@ -6,12 +6,13 @@ import Input from 'components/input'
 import Monolog from '../monolog.sc'
 import React from 'react'
 import {navto} from 'common/history'
-import {Review} from 'constants/chat'
 
 const Authorized = () => (
   <Monolog>
     <Title>Topics</Title>
-    <AmosChat messages={Review.Topics}/>
+    <AmosChat>
+      What topics is the resource on? Try to be as specific as possible to get the most Rep.
+    </AmosChat>
     <Input />
     <Buttons>
       <Button onClick={navto(`/review/links`)}>

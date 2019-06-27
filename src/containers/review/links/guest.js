@@ -4,12 +4,13 @@ import Title from 'components/title'
 import Input from 'components/input'
 import Monolog from '../monolog.sc'
 import React from 'react'
-import {Review} from 'constants/chat'
 import {navto} from 'common/history'
 
 const Guest = () => (
   <Monolog>
-    <AmosChat messages={Review.Links}/>
+    <AmosChat>
+      Let's start with the links. Please enter the  URLs that lead to the resource 😇
+    </AmosChat>
     <Title>Links</Title>
     <Input />
     <Button primary onClick={navto(`/review/topics`)}>

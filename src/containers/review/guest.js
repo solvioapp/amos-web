@@ -4,13 +4,16 @@ import Button from 'components/button'
 import Monolog from './monolog.sc'
 import Panel from './panel.sc'
 import React from 'react'
-import {Review} from 'constants/chat'
 import {navto} from 'common/history'
 
 const Guest = () => (
   <Panel>
     <Monolog>
-      <AmosChat messages={Review.Guest}/>
+      <AmosChat>
+        Here you can add reviews for online learning resources - either anonymously or
+        by signing up. I would recommended signing up first because then you can get reputation
+        for your reviews. 🙂
+      </AmosChat>
       <Button primary onClick={navto(`/review/links`)}>
         Submit anonymously
       </Button>

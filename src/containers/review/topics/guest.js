@@ -5,13 +5,15 @@ import Title from 'components/title'
 import Input from 'components/input'
 import Monolog from '../monolog.sc'
 import React from 'react'
-import {Review} from 'constants/chat'
 import {navto} from 'common/history'
 
 const Guest = () => (
   <Monolog>
     <Title>Topics</Title>
-    <AmosChat messages={Review.Topics}/>
+    <AmosChat>
+      What topics is the resource on?
+      Try to be as specific as possible to get the most Rep.
+    </AmosChat>
     <Input />
     <Buttons>
       <Button onClick={navto(`/review/links`)}>

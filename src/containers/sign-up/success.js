@@ -3,13 +3,17 @@ import Button from 'components/button'
 import Monolog from './monolog.sc'
 import Panel from './panel.sc'
 import React from 'react'
-import {Auth} from 'constants/chat'
 import {navto} from 'common/history'
+
+const messages = [
+  `Thanks for trusting me. 🤓`,
+  `Now - let's get to work! 🖌 📚Go ahead and`,
+]
 
 const Success = () => (
   <Panel>
     <Monolog>
-      <AmosChat messages={Auth.Success}/>
+      <AmosChat>{messages}</AmosChat>
       <Button primary onClick={navto(`/review`)}>
         Submit review
       </Button>

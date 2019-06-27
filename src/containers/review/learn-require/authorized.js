@@ -5,13 +5,15 @@ import Title from 'components/title'
 import Input from 'components/input'
 import Monolog from '../monolog.sc'
 import React from 'react'
-import {Review} from 'constants/chat'
 import {navto} from 'common/history'
 
 const Authorized = () => (
   <Monolog>
     <Title>Learning requirements</Title>
-    <AmosChat messages={Review.Requirements}/>
+    <AmosChat>
+      What do you need to know in order to make the most out of this resource?
+      Again, try to be as detailed as possible.
+    </AmosChat>
     <Input/>
     <Buttons>
       <Button onClick={navto(`/review/topics`)}>

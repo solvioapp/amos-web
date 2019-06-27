@@ -6,7 +6,6 @@ import Panel from './panel.sc'
 import React from 'react'
 import Title from 'components/title'
 import connect from './connect'
-import {Auth} from 'constants/chat'
 import {Redirect} from 'react-router-dom'
 import {useState} from 'react'
 
@@ -30,7 +29,7 @@ const makeInput = ([state, setState]) => (name, type) => {
 
 const url = R.pathOr(`/`, [`location`, `state`, `from`])
 const messages = [
-  ...Auth.LogIn,
+  `Welcome back! 🎊`,
   `Purpose of this form is to test PrivateRoute. Use password 123 to sign in`
 ]
 
@@ -50,7 +49,7 @@ function LogIn(props) {
   return (
     <Panel>
       <Title>Log in</Title>
-      <AmosChat messages={messages}/>
+      <AmosChat>{messages}</AmosChat>
       {input(`email`, `text`)}
       {input(`password`, `password`)}<br/><br/>
       <Button primary onClick={onSubmit}>LOG IN</Button>

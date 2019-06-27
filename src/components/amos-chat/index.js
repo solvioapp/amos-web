@@ -6,10 +6,16 @@ const toChatBox = (text, key) => (
   <ChatBox key={key} text={text}/>
 )
 
-const AmosChat = ({messages}) => (
-  <ChatFlow>
-    {messages.map(toChatBox)}
-  </ChatFlow>
-)
+function AmosChat({children}) {
+  if (typeof children === `string`) {
+    return <ChatBox text={children}/>
+  }
+
+  return (
+    <ChatFlow>
+      {children.map(toChatBox)}
+    </ChatFlow>
+  )
+}
 
 export default AmosChat
