@@ -7,6 +7,8 @@ const SpritePlugin = require(`svg-sprite-loader/plugin`)
 const cdnResolvers = require(`./cdn-resolvers`)
 const path = require(`path`)
 
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
+
 const rootPath = dir => path.resolve(__dirname, dir)
 
 const common = {
@@ -45,10 +47,12 @@ const common = {
   },
   resolve: {
     alias: {
+      root: rootPath(`.`),
       common: rootPath(`./src/common`),
       components: rootPath(`./src/components`),
       containers: rootPath(`./src/containers`),
       store: rootPath(`./src/store`),
+      constants: rootPath(`./src/constants/`),
     }
   },
   plugins: [
@@ -61,9 +65,9 @@ const common = {
 
 const develop = {
   mode: `development`,
-  devtool: `eval-source-map`,
+  devtool: `cheap-module-source-map`,
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   output: {
     publicPath: `/`
@@ -72,6 +76,7 @@ const develop = {
     new CopyPlugin([{
       from: rootPath(`./public`)
     }]),
+    new ErrorOverlayPlugin(),
   ],
 }
 

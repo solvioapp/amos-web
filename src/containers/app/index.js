@@ -6,14 +6,12 @@ import Review from 'containers/review'
 import Search from 'containers/search'
 import Notifications from 'containers/notifications'
 import SignUp from 'containers/sign-up'
-import SignIn from 'containers/sign-in'
+import LogIn from 'containers/log-in'
 import store from 'store'
 import {Provider} from 'react-redux'
 import {Redirect, Switch} from 'react-router-dom'
 import {Route, Router} from 'react-router-dom'
-import {createBrowserHistory} from 'history'
-
-const history = createBrowserHistory()
+import {history} from 'common/history'
 
 const App = () => (
   <Provider store={store}>
@@ -23,7 +21,7 @@ const App = () => (
           <Redirect from="/" to="review" exact/>
           <Route path="/review" component={Review}/>
           <Route path="/search" component={Search}/>
-          <Route path="/sign-in" component={SignIn}/>
+          <Route path="/log-in" component={LogIn}/>
           <Route path="/sign-up" component={SignUp}/>
           <PrivateRoute path="/notifications" component={Notifications}/>
           <Route component={NotFound}/>

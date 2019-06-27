@@ -1,15 +1,24 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
 import connect from './connect'
+import Title from 'components/title'
+import Input from 'components/input'
+import Panel from '../panel.sc'
+import React from 'react'
 
 const Email = ({login}) => (
-  <div>
-    <h1>Sign up with email</h1>
-    <p>Fake form by pressing you will be logged.</p>
-    <Link onClick={login} to="/sign-up/success">
+  <Panel>
+    <Title>Sign up</Title>
+    <AmosChat>
+      Once you sign up, you'll be able to get reputation for your Reviews. And it's free!
+    </AmosChat>
+    <Input/>
+    <Input/>
+    <Input/>
+    <Button primary onClick={login}>
       Sign up
-    </Link>
-  </div>
+    </Button>
+  </Panel>
 )
 
 export default connect(Email)

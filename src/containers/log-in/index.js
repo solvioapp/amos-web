@@ -1,8 +1,13 @@
 import * as R from 'ramda'
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
+import Input from 'components/input'
+import Panel from './panel.sc'
 import React from 'react'
+import Title from 'components/title'
 import connect from './connect'
-import {useState} from 'react'
 import {Redirect} from 'react-router-dom'
+import {useState} from 'react'
 
 const makeInput = ([state, setState]) => (name, type) => {
   const onChange = event => {
@@ -13,7 +18,7 @@ const makeInput = ([state, setState]) => (name, type) => {
     setState(newState)
   }
   return (
-    <input
+    <Input
       placeholder={name}
       type={type}
       value={state[name]}
@@ -23,8 +28,12 @@ const makeInput = ([state, setState]) => (name, type) => {
 }
 
 const url = R.pathOr(`/`, [`location`, `state`, `from`])
+const messages = [
+  `Welcome back! 🎊`,
+  `Purpose of this form is to test PrivateRoute. Use password 123 to sign in`
+]
 
-function SignIn(props) {
+function LogIn(props) {
   if (props.isAuthenticated) {
     return <Redirect to={url(props)}/>
   }
@@ -38,19 +47,14 @@ function SignIn(props) {
   }
 
   return (
-    <div>
-      <h1>Fake login form</h1>
-      <p>
-        Purpose of this form is to test PrivateRoute.<br/>
-        Use password <code>123</code> to sign in.
-      </p>
-      <form onSubmit={onSubmit}>
-        {input(`email`, `text`)}
-        {input(`password`, `password`)}<br/><br/>
-        <input type="submit" value="SIGN IN"/>
-      </form>
-    </div>
+    <Panel>
+      <Title>Log in</Title>
+      <AmosChat>{messages}</AmosChat>
+      {input(`email`, `text`)}
+      {input(`password`, `password`)}<br/><br/>
+      <Button primary onClick={onSubmit}>LOG IN</Button>
+    </Panel>
   )
 }
 
-export default connect(SignIn)
+export default connect(LogIn)

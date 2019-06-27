@@ -37,6 +37,7 @@
     "copy-webpack-plugin": "^5.0.3",
     "cross-env": "^5.2.0",
     "dynamic-cdn-webpack-plugin": "^4.0.0",
+    "error-overlay-webpack-plugin": "^0.4.0",
     "eslint": "^5.15.3",
     "eslint-plugin-async-await": "0.0.0",
     "eslint-plugin-react": "^7.12.4",
