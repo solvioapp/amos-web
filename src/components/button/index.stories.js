@@ -13,7 +13,7 @@ const Panel = styled.div`
   }
 `
 
-storiesOf(`Button`)
+storiesOf(`Button`, module)
   .add(`Text`, () =>
     <Panel>
       <Button>

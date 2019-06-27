@@ -1,17 +1,14 @@
 import * as R from 'ramda'
-import React from 'react'
-import connect from './connect'
-import {useState} from 'react'
-import {Redirect} from 'react-router-dom'
-import {Link} from 'react-router-dom'
-import {Auth} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
-import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
-import Heading from 'components/heading'
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
 import Input from 'components/input'
-import Button from 'components/btn'
-
+import Panel from './panel.sc'
+import React from 'react'
+import Title from 'components/title'
+import connect from './connect'
+import {Auth} from 'constants/chat'
+import {Redirect} from 'react-router-dom'
+import {useState} from 'react'
 
 const makeInput = ([state, setState]) => (name, type) => {
   const onChange = event => {
@@ -22,7 +19,7 @@ const makeInput = ([state, setState]) => (name, type) => {
     setState(newState)
   }
   return (
-    <input
+    <Input
       placeholder={name}
       type={type}
       value={state[name]}
@@ -32,6 +29,10 @@ const makeInput = ([state, setState]) => (name, type) => {
 }
 
 const url = R.pathOr(`/`, [`location`, `state`, `from`])
+const messages = [
+  ...Auth.LogIn,
+  `Purpose of this form is to test PrivateRoute. Use password 123 to sign in`
+]
 
 function LogIn(props) {
   if (props.isAuthenticated) {
@@ -47,19 +48,13 @@ function LogIn(props) {
   }
 
   return (
-    <Aux>
-      <Col>
-        <Heading>Log in</Heading>
-        {createChatBoxes(Auth.LogIn)}
-        <p>Purpose of this form is to test PrivateRoute.<br/>
-        Use password <code>123</code> to sign in.</p>
-        <form onSubmit={onSubmit}>
-          {input(`email`, `text`)}
-          {input(`password`, `password`)}<br/><br/>
-          <input type="submit" value="LOG IN"/>
-        </form>
-      </Col>
-    </Aux>
+    <Panel>
+      <Title>Log in</Title>
+      <AmosChat messages={messages}/>
+      {input(`email`, `text`)}
+      {input(`password`, `password`)}<br/><br/>
+      <Button primary onClick={onSubmit}>LOG IN</Button>
+    </Panel>
   )
 }
 

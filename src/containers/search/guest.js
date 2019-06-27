@@ -1,20 +1,17 @@
+import AmosChat from 'components/amos-chat'
+import AuthBox from 'components/auth-box'
+import Monolog from './monolog.sc'
+import Panel from './panel.sc'
 import React from 'react'
-
-import {Col} from 'components/page-layout'
-import createChatBoxes from 'common/createChatBoxes'
 import {Search} from 'constants/chat'
-import Auth from 'components/auth'
-import Aux from 'components/auxiliary'
 
 const Guest = () => (
-  <Aux>
-    <Col>
-      {createChatBoxes(Search.Guest)}
-    </Col>
-    <Col>
-      <Auth />
-    </Col>
-  </Aux>
+  <Panel>
+    <Monolog>
+      <AmosChat messages={Search.Guest}/>
+    </Monolog>
+    <AuthBox/>
+  </Panel>
 )
 
 export default Guest

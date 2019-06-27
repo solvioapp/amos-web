@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 const Search = {
   Guest: [
-  `👋 I'm Amos. I was created to be "the best learning mentor in the world".`,
-  `For now I'm trying to sort the web's learning resources. Then in the future I'll be able to show you learning paths on any topic, tailored to your requirements.`,
-  [`So I need your help! Create an account and submit reviews for your favorite learning resources. `, <i> Vamos, amigo! &nbsp; &nbsp; &nbsp; &nbsp; </i>, `    🤗`],
+    `👋 I'm Amos. I was created to be "the best learning mentor in the world".`,
+    `For now I'm trying to sort the web's learning resources. Then in the future I'll be able to show you learning paths on any topic, tailored to your requirements.`,
+    `So I need your help! Create an account and submit reviews for your favorite learning resources. Vamos, amigo! 🤗`,
   ],
   Authorized: [
     `Hi again.`,
@@ -52,4 +52,4 @@ const Review = {
   ],
 }
 
-export { Search, Auth, Review }
+export {Search, Auth, Review}

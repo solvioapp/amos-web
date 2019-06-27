@@ -1,24 +1,21 @@
-import Aux from 'components/auxiliary'
+import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
-import Heading from 'components/heading'
+import Title from 'components/title'
 import Input from 'components/input'
+import Monolog from '../monolog.sc'
 import React from 'react'
-import createChatBoxes from 'common/createChatBoxes'
-import {Col} from 'components/page-layout'
 import {Review} from 'constants/chat'
 import {navto} from 'common/history'
 
 const Guest = () => (
-  <Aux>
-    <Col>
-      {createChatBoxes(Review.Links)}
-      <Heading>Links</Heading>
-      <Input />
-      <Button icon="user" onClick={navto(`/review/topics`)}>
-        Next
-      </Button>
-    </Col>
-  </Aux>
+  <Monolog>
+    <AmosChat messages={Review.Links}/>
+    <Title>Links</Title>
+    <Input />
+    <Button primary onClick={navto(`/review/topics`)}>
+      Next
+    </Button>
+  </Monolog>
 )
 
 export default Guest

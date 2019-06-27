@@ -1,25 +1,23 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {Auth} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
-import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
-import Heading from 'components/heading'
-import Input from 'components/input'
-import Button from 'components/btn'
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
 import connect from './connect'
+import Title from 'components/title'
+import Input from 'components/input'
+import Panel from '../panel.sc'
+import React from 'react'
+import {Auth} from 'constants/chat'
 
 const Email = ({login}) => (
-  <Aux>
-    <Col>
-      <Heading>Sign up</Heading>
-      {createChatBoxes(Auth.SignUp)}
-      <Input />
-      <Input />
-      <Input />
-      <Button type='AUTH/SIGN-UP' onClick={login}/>
-    </Col>
-  </Aux>
+  <Panel>
+    <Title>Sign up</Title>
+    <AmosChat messages={Auth.SignUp}/>
+    <Input/>
+    <Input/>
+    <Input/>
+    <Button primary onClick={login}>
+      Sign up
+    </Button>
+  </Panel>
 )
 
 export default connect(Email)

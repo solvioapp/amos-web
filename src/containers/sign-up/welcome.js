@@ -1,22 +1,16 @@
+import AmosChat from 'components/amos-chat'
+import AuthBox from 'components/auth-box'
+import Title from 'components/title'
+import Panel from './panel.sc'
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {Auth} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
-import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
-import Heading from 'components/heading'
-import Input from 'components/input'
-import Button from 'components/btn'
-import AuthBox from 'components/auth'
 
 const Guest = () => (
-  <Aux>
-    <Col>
-      <Heading>Sign up</Heading>
-      {createChatBoxes(Auth.SignUp)}
-      <AuthBox />
-    </Col>
-  </Aux>
+  <Panel>
+    <Title>Sign up</Title>
+    <AmosChat messages={Auth.SignUp}/>
+    <AuthBox/>
+  </Panel>
 )
 
 export default Guest

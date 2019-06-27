@@ -1,23 +1,27 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {Review} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
-import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
-import Heading from 'components/heading'
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
+import Buttons from '../buttons.sc'
+import Title from 'components/title'
 import Input from 'components/input'
-import Button from 'components/btn'
+import Monolog from '../monolog.sc'
+import React from 'react'
+import {Review} from 'constants/chat'
+import {navto} from 'common/history'
 
 const Guest = () => (
-  <Aux>
-    <Col>
-      <Heading>Learning requirements</Heading>
-      {createChatBoxes(Review.Requirements)}
-      <Input />
-      <Link to="/review/topics"><Button type='REVIEW/PREVIOUS' /></Link>
-      <Button type='REVIEW/FINISH' />
-    </Col>
-  </Aux>
+  <Monolog>
+    <Title>Learning requirements</Title>
+    <AmosChat messages={Review.Requirements}/>
+    <Input />
+    <Buttons>
+      <Button onClick={navto(`/review/topics`)}>
+        Previous
+      </Button>
+      <Button primary onClick={navto(`/review/thanks`)}>
+        Finish
+      </Button>
+    </Buttons>
+  </Monolog>
 )
 
 export default Guest

@@ -1,20 +1,20 @@
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
+import Monolog from './monolog.sc'
+import Panel from './panel.sc'
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {Auth} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
-import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
-import Heading from 'components/heading'
-import Input from 'components/input'
-import Button from 'components/btn'
+import {navto} from 'common/history'
 
 const Success = () => (
-  <Aux>
-    <Col>
-      {createChatBoxes(Auth.Success)}
-      <Button type='REVIEW/SUBMIT-A-REVIEW' />
-    </Col>
-  </Aux>
+  <Panel>
+    <Monolog>
+      <AmosChat messages={Auth.Success}/>
+      <Button primary onClick={navto(`/review`)}>
+        Submit review
+      </Button>
+    </Monolog>
+  </Panel>
 )
 
 export default Success

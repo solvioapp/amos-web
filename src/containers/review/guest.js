@@ -1,22 +1,22 @@
+import AmosChat from 'components/amos-chat'
+import AuthBox from 'components/auth-box'
+import Button from 'components/button'
+import Monolog from './monolog.sc'
+import Panel from './panel.sc'
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Col} from 'components/page-layout'
-import createChatBoxes from 'common/createChatBoxes';
 import {Review} from 'constants/chat'
-import AuthBox from 'components/auth'
-import Aux from 'components/auxiliary'
-import Button from 'components/btn'
+import {navto} from 'common/history'
 
 const Guest = () => (
-  <Aux>
-    <Col>
-      {createChatBoxes(Review.Guest)}
-      <Link to="/review/links"><Button type='REVIEW/SUBMIT-ANONYMOUSLY'/></Link>
-    </Col>
-    <Col>
-      <AuthBox />
-    </Col>
-  </Aux>
+  <Panel>
+    <Monolog>
+      <AmosChat messages={Review.Guest}/>
+      <Button primary onClick={navto(`/review/links`)}>
+        Submit anonymously
+      </Button>
+    </Monolog>
+    <AuthBox/>
+  </Panel>
 )
 
 export default Guest

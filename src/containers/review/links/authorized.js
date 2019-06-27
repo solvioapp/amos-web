@@ -1,23 +1,26 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {Review} from 'constants/chat'
-import createChatBoxes from 'common/createChatBoxes'
-import Aux from 'components/auxiliary'
-import {Col} from 'components/page-layout'
-import Heading from 'components/heading'
+import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
+import Title from 'components/title'
 import Input from 'components/input'
-import Button from 'components/btn'
+import Monolog from '../monolog.sc'
+import React from 'react'
+import {Review} from 'constants/chat'
+import {navto} from 'common/history'
+
+const messages = [
+  ...Review.Authorized,
+  ...Review.Links
+]
 
 const Authorized = () => (
-  <Aux>
-    <Col>
-      {createChatBoxes(Review.Authorized)}
-      {createChatBoxes(Review.Links)}
-      <Heading>Links</Heading>
-      <Input />
-      <Link to="/review/topics"><Button type='REVIEW/NEXT' /></Link>
-    </Col>
-  </Aux>
+  <Monolog>
+    <AmosChat messages={messages}/>
+    <Title>Links</Title>
+    <Input/>
+    <Button primary onClick={navto(`/review/topics`)}>
+      Next
+    </Button>
+  </Monolog>
 )
 
 export default Authorized
