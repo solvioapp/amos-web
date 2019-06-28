@@ -1,9 +1,9 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
-import Title from 'components/title'
 import Input from 'components/input'
 import Monolog from '../monolog.sc'
 import React from 'react'
+import Title from 'components/title'
 import {navto} from 'common/history'
 
 const messages = [

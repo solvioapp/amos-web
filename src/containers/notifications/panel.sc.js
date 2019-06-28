@@ -4,15 +4,8 @@ const Panel = styled.div`
   display: flex;
   flex-direction: column;
 
-  > h1 + div,
-  > div + input,
-  > input + button,
-  > input + input {
+  > h1 + button {
     margin-top: 24px;
-  }
-
-  > div + div {
-    margin-top: 30px;
   }
 `
 

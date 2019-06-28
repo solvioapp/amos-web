@@ -4,11 +4,13 @@ import {storiesOf} from '@storybook/react'
 
 const messages = [
   `Hello I'm Amos!`,
-  `Let's start with the links.\n
+  `Let's start with the links.
    Please enter the URLs that lead to the resource 😇`,
 ]
 
 storiesOf(`AmosChat`, module)
   .add(`Single box`, () =>
-    <AmosChat messages={messages}/>
+    <AmosChat>
+      {messages}
+    </AmosChat>
   )

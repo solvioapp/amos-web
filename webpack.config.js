@@ -4,10 +4,9 @@ const CopyPlugin = require(`copy-webpack-plugin`)
 const DynamicCdnWebpackPlugin = require(`dynamic-cdn-webpack-plugin`)
 const HtmlWebPackPlugin = require(`html-webpack-plugin`)
 const SpritePlugin = require(`svg-sprite-loader/plugin`)
+const ErrorOverlayPlugin = require(`error-overlay-webpack-plugin`)
 const cdnResolvers = require(`./cdn-resolvers`)
 const path = require(`path`)
-
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 
 const rootPath = dir => path.resolve(__dirname, dir)
 
@@ -43,22 +42,22 @@ const common = {
   },
   output: {
     filename: `bundle.js`,
-    path: rootPath(`./public`)
+    publicPath: `/`
   },
   resolve: {
     alias: {
       root: rootPath(`.`),
-      common: rootPath(`./src/common`),
-      components: rootPath(`./src/components`),
-      containers: rootPath(`./src/containers`),
-      store: rootPath(`./src/store`),
-      constants: rootPath(`./src/constants/`),
+      common: rootPath(`src/common`),
+      components: rootPath(`src/components`),
+      containers: rootPath(`src/containers`),
+      store: rootPath(`src/store`),
+      constants: rootPath(`src/constants/`),
     }
   },
   plugins: [
     new SpritePlugin(),
     new HtmlWebPackPlugin({
-      template: rootPath(`./src/index.html`)
+      template: rootPath(`src/index.html`)
     }),
   ],
 }
@@ -69,12 +68,9 @@ const develop = {
   devServer: {
     historyApiFallback: true,
   },
-  output: {
-    publicPath: `/`
-  },
   plugins: [
     new CopyPlugin([{
-      from: rootPath(`./public`)
+      from: rootPath(`public`)
     }]),
     new ErrorOverlayPlugin(),
   ],

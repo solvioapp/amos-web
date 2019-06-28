@@ -5,6 +5,7 @@ const primary = css`
   background-color: #6558f5;
   border: 1px solid #6558f5;
   color: white;
+  white-space: nowrap;
 
   &:hover {
     background-color: #7b70f9;

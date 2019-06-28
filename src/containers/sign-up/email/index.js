@@ -1,10 +1,10 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import connect from './connect'
-import Title from 'components/title'
 import Input from 'components/input'
 import Panel from '../panel.sc'
 import React from 'react'
+import Title from 'components/title'
 
 const Email = ({login}) => (
   <Panel>
