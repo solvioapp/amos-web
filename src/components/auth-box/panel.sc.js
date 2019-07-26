@@ -5,6 +5,7 @@ const Panel = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 10px;
 
   > div + button {
     margin-top: 24px;
