@@ -14,9 +14,11 @@ function AmosChat({avatar, children}) {
      children = [children]
   }
 
+  avatar = avatar || 'regular'
+
   return (
     <Box>
-      <Avatar size={avatar || 'regular'} src={image}/>
+      <Avatar size={avatar} src={image}/>
       <ChatFlow>
         <Bubble size={avatar}>{children[0]}</Bubble>
         {children.slice(1).map(toBubble)}
