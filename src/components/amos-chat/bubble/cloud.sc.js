@@ -13,11 +13,14 @@ const large = css`
 const ChatBox = styled.div`
   background-color: white;
   border-radius: 12px;
-  border: solid 1px black;
-  max-width: 550px;
+  border: 1px solid black;
+  max-width: 440px;
   padding: 8px 12px;
   position: relative;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
   ${props => eval(props.size)};
 `
 

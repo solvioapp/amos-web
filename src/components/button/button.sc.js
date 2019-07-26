@@ -32,7 +32,7 @@ const Button = styled.button`
   height: ${prop(`height`, `40px`)};
   padding: 0 30px;
   user-select: none;
-  width: ${prop(`width`, `300px`)};
+  width: ${prop(`width`, `250px`)};
   /* width: 100%; */
 
   > svg {

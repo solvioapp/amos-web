@@ -20,9 +20,3 @@ const Monolog = styled.div `
 `
 
 export default Monolog
-
-
-// const ChatFlow = styled.div`
-// `
-
-// export default ChatFlow
