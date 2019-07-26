@@ -7,12 +7,12 @@ const Panel = styled.div`
   text-align: center;
   padding-top: 10px;
 
-  > div + button {
-    margin-top: 24px;
+  > div {
+    margin-top: 20px;
   }
 
   > button + button {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 `
 
