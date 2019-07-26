@@ -6,10 +6,17 @@ import Panel from './panel.sc'
 import React from 'react'
 import {navto} from 'common/history'
 
+  // <Panel>
+  //   <AmosMono avatar={'large'}>
+  //     {messages}
+  //   </AmosMono>
+  //   <AuthBox/>
+  // </Panel>
+
 const Guest = () => (
   <Panel>
     <Monolog>
-      <AmosChat>
+      <AmosChat avatar={'large'}>
         Here you can add reviews for online learning resources - either anonymously or
         by signing up. I would recommended signing up first because then you can get reputation
         for your reviews. 🙂

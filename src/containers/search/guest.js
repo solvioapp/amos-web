@@ -1,5 +1,6 @@
+import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
-import AmosMono from 'components/amos-monolog'
+import Monolog from './monolog.sc'
 import Panel from './panel.sc'
 import React from 'react'
 
@@ -11,9 +12,11 @@ const messages = [
 
 const Guest = () => (
   <Panel>
-    <AmosMono avatar={'large'}>
-      {messages}
-    </AmosMono>
+    <Monolog>
+      <AmosChat avatar={'large'}>
+        {messages}
+      </AmosChat>
+    </Monolog>
     <AuthBox/>
   </Panel>
 )
