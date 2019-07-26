@@ -1,12 +1,22 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+import {ifProp, prop} from 'common/style'
+
+const regular = css`
+  height: 75px;
+  width: 75px;
+`
+
+const large = css`
+  height: 125px;
+  width: 125px;
+`
 
 const Avatar = styled.img`
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3;
   border-radius: 50%;
-  border: 1px black solid;
+  border: 1px black solid; */
   display: inline;
-  height: 50px;
-  width: 50px;
+  ${props => eval(props.size)}
 `
 
 export default Avatar

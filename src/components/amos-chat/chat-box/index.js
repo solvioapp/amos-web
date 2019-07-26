@@ -5,9 +5,9 @@ import React from 'react'
 // import image from './amos.png'
 import image from './amos.gif'
 
-const ChatBox = ({text}) => (
+const ChatBox = ({avatar, text}) => (
   <Box>
-    <Avatar src={image}/>
+    {avatar && <Avatar size={avatar} src={image}/>}
     <Bubble>{text}</Bubble>
   </Box>
 )
