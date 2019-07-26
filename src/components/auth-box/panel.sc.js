@@ -5,7 +5,7 @@ const Panel = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 40px;
 
   > div {
     margin-top: 20px;

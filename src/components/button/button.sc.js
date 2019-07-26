@@ -30,7 +30,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 15px;
   height: ${prop(`height`, `40px`)};
-  padding: 0 30px;
+  padding: 0 20px;
   user-select: none;
   width: ${prop(`width`, `250px`)};
   /* width: 100%; */
