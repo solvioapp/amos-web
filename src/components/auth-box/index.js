@@ -9,9 +9,9 @@ const AuthBox = () => (
     <Button icon="google">Continue with Google</Button>
     <p>OR</p>
     <div>
-      <Link to="/sign-up/email">Sign up with email</Link>
+      <Link to="/sign-up/email">Sign up</Link>
       {` • `}
-      <Link to="/log-in">Log in with email</Link>
+      <Link to="/log-in">Log in</Link>
     </div>
   </Panel>
 )
