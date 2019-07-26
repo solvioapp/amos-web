@@ -13,7 +13,7 @@ const large = css`
 const ChatBox = styled.div`
   background-color: white;
   border-radius: 12px;
-  border: 1px solid black;
+  border: 1.3px solid black;
   max-width: 440px;
   padding: 8px 12px;
   position: relative;
