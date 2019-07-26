@@ -1,14 +1,15 @@
 import styled, {css} from 'styled-components'
 import {ifProp, prop} from 'common/style'
+import {AVATAR_SIZE_REGULAR, AVATAR_SIZE_LARGE} from './constants'
 
 const regular = css`
-  height: 75px;
-  width: 75px;
+  height: ${AVATAR_SIZE_REGULAR + 'px'};
+  width: ${AVATAR_SIZE_REGULAR + 'px'};
 `
 
 const large = css`
-  height: 125px;
-  width: 125px;
+  height: ${AVATAR_SIZE_LARGE + 'px'};
+  width: ${AVATAR_SIZE_LARGE + 'px'};
 `
 
 const Avatar = styled.img`
@@ -16,7 +17,7 @@ const Avatar = styled.img`
   border-radius: 50%;
   border: 1px black solid; */
   display: inline;
-  ${props => eval(props.size)}
+  ${props => eval(props.size)};
 `
 
 export default Avatar
