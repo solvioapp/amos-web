@@ -9,7 +9,9 @@ const AuthBox = () => (
     <Button icon="google">Log in with Google</Button>
     <div>
       <Link to="/sign-up/email">Sign up</Link>
+      &nbsp;
       {` • `}
+      &nbsp;
       <Link to="/log-in">Log in</Link>
     </div>
   </Panel>
