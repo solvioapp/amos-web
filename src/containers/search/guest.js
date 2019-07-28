@@ -13,7 +13,7 @@ const messages = [
 const Guest = () => (
   <Panel>
     <Monolog>
-      <AmosChat>
+      <AmosChat avatar={'large'}>
         {messages}
       </AmosChat>
     </Monolog>

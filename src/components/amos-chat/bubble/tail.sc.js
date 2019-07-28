@@ -10,7 +10,7 @@ const ChatBox = styled.div`
 
   &::after {
     background: #ffffff;
-    border: 1px solid black;
+    border: 1.3px solid black;
     content: '';
     height: 100%;
     position: absolute;

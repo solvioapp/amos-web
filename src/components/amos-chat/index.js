@@ -1,20 +1,29 @@
-import ChatBox from './chat-box'
+import Box from './box.sc'
+import Avatar from './avatar.sc'
+import Bubble from './bubble'
 import ChatFlow from './chat-flow.sc'
 import React from 'react'
+import image from './amos.gif'
 
-const toChatBox = (text, key) => (
-  <ChatBox key={key} text={text}/>
+const toBubble = (text, key) => (
+  <Bubble key={key}>{text}</Bubble>
 )
 
-function AmosChat({children}) {
+function AmosChat({avatar, children}) {
   if (typeof children === `string`) {
-    return <ChatBox text={children}/>
+     children = [children]
   }
 
+  avatar = avatar || 'regular'
+
   return (
-    <ChatFlow>
-      {children.map(toChatBox)}
-    </ChatFlow>
+    <Box>
+      <Avatar size={avatar} src={image}/>
+      <ChatFlow>
+        <Bubble size={avatar}>{children[0]}</Bubble>
+        {children.slice(1).map(toBubble)}
+      </ChatFlow>
+    </Box>
   )
 }
 

@@ -18,6 +18,10 @@ const Link = styled(NavLink)`
     margin-left: 16px;
   }
 
+  &:hover {
+    color: #2F82FF;
+  }
+
   @media (max-width: 768px) {
     font-size: 14px;
   }

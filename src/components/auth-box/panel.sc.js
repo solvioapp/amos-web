@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 
 const Panel = styled.div`
-  align-items: stretch;
+  align-items: center;
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 40px;
 
-  > div + button {
-    margin-top: 24px;
+  > div {
+    margin-top: 20px;
   }
 
   > button + button {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 `
 

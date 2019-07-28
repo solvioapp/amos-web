@@ -2,13 +2,13 @@ import styled, {css} from 'styled-components'
 import {ifProp, prop} from 'common/style'
 
 const primary = css`
-  background-color: #6558f5;
-  border: 1px solid #6558f5;
+  background-color: #0066FF;
+  border: 1px solid #0066FF;
   color: white;
   white-space: nowrap;
 
   &:hover {
-    background-color: #7b70f9;
+    background-color: #2F82FF;
   }
 `
 
@@ -24,15 +24,15 @@ const iconOnly = css`
 
 const Button = styled.button`
   background-color: white;
-  border-radius: 3px;
-  border: 1px solid #959595;
+  border-radius: 8px;
+  border: 1.3px solid #959595;
   color: black;
   cursor: pointer;
   font-size: 15px;
   height: ${prop(`height`, `40px`)};
-  padding: 0 30px;
+  padding: 0 20px;
   user-select: none;
-  width: ${prop(`width`)};
+  width: ${prop(`width`, `auto`)};
 
   > svg {
     height: 15px;

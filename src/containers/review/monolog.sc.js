@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Monolog = styled.div`
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: column;
 

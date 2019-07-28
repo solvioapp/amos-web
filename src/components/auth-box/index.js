@@ -5,13 +5,14 @@ import {Link} from 'react-router-dom'
 
 const AuthBox = () => (
   <Panel>
-    <Button icon="facebook">Continue with Facebook</Button>
-    <Button icon="google">Continue with Google</Button>
-    <p>OR</p>
+    <Button icon="facebook" width={'250px'}>Log in with Facebook</Button>
+    <Button icon="google" width={'250px'}>Log in with Google</Button>
     <div>
-      <Link to="/sign-up/email">Sign up with email</Link>
+      <Link to="/sign-up/email">Sign up</Link>
+      &nbsp;
       {` • `}
-      <Link to="/log-in">Log in with email</Link>
+      &nbsp;
+      <Link to="/log-in">Log in</Link>
     </div>
   </Panel>
 )

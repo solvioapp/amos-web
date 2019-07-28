@@ -5,7 +5,7 @@ const Layout = styled.div`
   display: flex;
 
   > img + div {
-    margin-left: 10px;
+    margin-left: 50px;
   }
 `
 
