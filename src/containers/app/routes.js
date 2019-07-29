@@ -10,7 +10,8 @@ import {Redirect, Route, Switch} from 'react-router-dom'
 
 const Routes = () => (
   <Switch>
-    <Redirect from="/" to="review" exact/>
+    {/* TODO: If user is authenticated, redirect should be to /review instead of search */}
+    <Redirect from="/" to="search" exact/>
     <Route path="/review" component={Review}/>
     <Route path="/search" component={Search}/>
     <Route path="/log-in" component={LogIn}/>
