@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom'
 
 const AuthBox = () => (
   <Panel>
-    <Button icon="facebook" width={'250px'}>Log in with Facebook</Button>
-    <Button icon="google" width={'250px'}>Log in with Google</Button>
+    <Button icon="facebook" width={'250px'}>Continue with Facebook</Button>
+    <Button icon="google" width={'250px'}>Continue with Google</Button>
     <div>
       <Link to="/sign-up/email">Sign up</Link>
       &nbsp;
