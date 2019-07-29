@@ -6,7 +6,7 @@ import Title from 'components/title'
 
 const Guest = () => (
   <Panel>
-    <Title>Sign up</Title>
+    {/* <Title>Sign up</Title> */}
     <AmosChat>
       Once you sign up, you'll be able to get reputation for your Reviews. And it's free!
     </AmosChat>
