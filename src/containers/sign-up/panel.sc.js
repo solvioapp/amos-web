@@ -19,6 +19,10 @@ const Panel = styled.div`
   > button {
     margin-top: 30px;
   }
+
+  > button + div {
+    margin-top: 24px;
+  }
 `
 
 export default Panel

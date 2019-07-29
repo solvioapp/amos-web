@@ -5,6 +5,7 @@ import Input from 'components/input'
 import Checkbox from 'components/checkbox'
 import Panel from '../panel.sc'
 import React from 'react'
+import AuthOptions from 'components/auth-options';
 
 const Email = ({login}) => (
   <Panel>
@@ -18,6 +19,10 @@ const Email = ({login}) => (
     <Button primary onClick={login} width={'150px'}>
       Sign up
     </Button>
+    <AuthOptions first={{
+      link: '/sign-up',
+      text: 'Use social'
+    }}/>
   </Panel>
 )
 
