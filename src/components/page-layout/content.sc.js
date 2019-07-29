@@ -6,7 +6,7 @@ const Content = styled.div`
   flex-grow: 1;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 15%;
+  margin-top: 10%;
   padding: 30px;
 `
 
