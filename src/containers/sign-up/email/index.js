@@ -15,6 +15,10 @@ const Email = ({login}) => (
     <Input>Email</Input>
     <Input>Password</Input>
     <Input>Repeat password</Input>
+    {/* TODO: Conditional show */}
+    <AmosChat avatar={'none'}>
+      Hey, the passwords don't seem to match. Good we caught that now!
+    </AmosChat>
     <Checkbox>Subscribe to Solvio Monthly</Checkbox>
     <Button primary onClick={login} width={'150px'}>
       Sign up

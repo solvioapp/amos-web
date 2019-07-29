@@ -2,6 +2,11 @@ import styled, {css} from 'styled-components'
 import {ifProp, prop} from 'common/style'
 import {AVATAR_SIZE_REGULAR, AVATAR_SIZE_LARGE} from './constants'
 
+const none = css`
+  height: 0;
+  width: 0;
+`
+
 const regular = css`
   height: ${AVATAR_SIZE_REGULAR + 'px'};
   width: ${AVATAR_SIZE_REGULAR + 'px'};

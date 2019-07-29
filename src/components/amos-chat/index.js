@@ -9,16 +9,14 @@ const toBubble = (text, key) => (
   <Bubble key={key}>{text}</Bubble>
 )
 
-function AmosChat({avatar, children}) {
+function AmosChat({avatar = 'regular', children}) {
   if (typeof children === `string`) {
      children = [children]
   }
 
-  avatar = avatar || 'regular'
-
   return (
     <Box>
-      <Avatar size={avatar} src={image}/>
+      {avatar !== 'none' && <Avatar size={avatar} src={image}/>}
       <ChatFlow>
         <Bubble size={avatar}>{children[0]}</Bubble>
         {children.slice(1).map(toBubble)}

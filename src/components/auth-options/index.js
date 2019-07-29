@@ -1,23 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const AuthOptions = ({first, second}) => {
-
-  // default props
-  
-  if (!first) {
-    first = {
-      link: '/sign-up/email',
-      text: 'Sign up'
-    }
+const AuthOptions = ({
+  first = {
+    link: '/sign-up/email',
+    text: 'Sign up'
+  }, 
+  second = {
+    link: '/log-in',
+    text: 'Log in'
   }
-
-  if (!second) {
-    second = {
-      link: '/log-in',
-      text: 'Log in'
-    }
-  }
+}) => {
 
   return (
     <div>

@@ -1,6 +1,10 @@
 import styled, {css} from 'styled-components'
 import {AVATAR_SIZE_REGULAR, AVATAR_SIZE_LARGE} from '../constants'
 
+const none = css`
+  margin-top: 0;
+`
+
 const regular = css`
   /* 21.7 is half of height of first line of bubble */
   margin-top: ${AVATAR_SIZE_REGULAR / 2 - 21.7 + 'px'};
