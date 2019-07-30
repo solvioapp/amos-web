@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import AuthOptions from './auth-options.sc'
 
-const AuthOptions = ({
+const AppAuthOptions = ({
   first = {
     link: '/sign-up/email',
     text: 'Sign up'
@@ -13,14 +14,14 @@ const AuthOptions = ({
 }) => {
 
   return (
-    <div>
+    <AuthOptions>
       <Link to={first.link}>{first.text}</Link>
       &nbsp;
       {` • `}
       &nbsp;
       <Link to={second.link}>{second.text}</Link>
-    </div>
+    </AuthOptions>
   )
 }
 
-export default AuthOptions
+export default AppAuthOptions
