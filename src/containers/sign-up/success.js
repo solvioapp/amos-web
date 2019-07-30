@@ -6,8 +6,8 @@ import React from 'react'
 import {navto} from 'common/history'
 
 const messages = [
-  `Thanks for trusting me. 🤓`,
-  `Now - let's get to work! 🖌 📚Go ahead and`,
+  `Nice to meet you too 😴`,
+  () => <span>Now - let's get to work! 🖌 📚 <br/> Go ahead and ...</span>,
 ]
 
 const Success = () => (

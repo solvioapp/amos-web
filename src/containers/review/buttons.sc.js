@@ -1,10 +1,11 @@
+import Button from 'components/button/top.sc'
 import styled from 'styled-components'
 
 const Buttons = styled.div`
   display: flex;
   margin-top: 30px;
 
-  > button + button {
+  ${Button} + ${Button} {
     margin-left: 16px;
   }
 `

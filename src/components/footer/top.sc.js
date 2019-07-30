@@ -1,3 +1,4 @@
+import Link from './link.sc'
 import styled from 'styled-components'
 
 const Top_ = styled.footer`
@@ -9,7 +10,7 @@ const Top_ = styled.footer`
   text-align: center;
   width: 100%;
 
-  > a {
+  > ${Link} {
     color: black;
     text-decoration: none;
   }

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {prop} from 'common/style'
 
 
-const Input = styled.input`
+const Input_ = styled.input`
   background-color: white;
   border-radius: 4px;
   border: 1px solid #dbdbdb;
@@ -22,4 +22,4 @@ const Input = styled.input`
   }
 `
 
-export default Input
+export default Input_

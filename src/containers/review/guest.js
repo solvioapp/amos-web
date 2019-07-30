@@ -2,12 +2,12 @@ import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
 import Button from 'components/button'
 import Monolog from './monolog.sc'
-import Panel from './panel.sc'
+import Top_ from './top.sc'
 import React from 'react'
 import {navto} from 'common/history'
 
 const Guest = () => (
-  <Panel>
+  <Top_>
     <Monolog>
       <AmosChat avatar={'large'}>
         Here you can add reviews for online learning resources - either anonymously or
@@ -19,7 +19,7 @@ const Guest = () => (
       </Button>
     </Monolog>
     <AuthBox/>
-  </Panel>
+  </Top_>
 )
 
 export default Guest

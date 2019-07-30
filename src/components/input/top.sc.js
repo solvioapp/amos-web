@@ -7,7 +7,7 @@ const Top_ = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-  ${Label_} {
+  > ${Label_} {
     margin: 0 0 7.5px 11px;
   }
 `

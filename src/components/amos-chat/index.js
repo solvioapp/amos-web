@@ -6,7 +6,7 @@ import ChatFlow_ from './chat-flow.sc'
 import React from 'react'
 
 const toBubble = (text, key) => (
-  <Bubble key={key}>{text}</Bubble>
+  <Bubble key={key}>{typeof text === 'function' ? text() : text}</Bubble>
 )
 
 const AmosChat = ({avatar = 'regular', children}) => {
