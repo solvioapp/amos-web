@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Panel = styled.div`
+const Top_ = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 200px;
@@ -10,4 +10,4 @@ const Panel = styled.div`
   }
 `
 
-export default Panel
+export default Top_

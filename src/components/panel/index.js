@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import AuthOptions from 'components/auth-options/auth-options.sc'
+import AuthOptions from 'components/auth-options/top.sc'
 
 const Panel = styled.div `
   display: flex;

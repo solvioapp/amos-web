@@ -1,7 +1,7 @@
 import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
 import Monolog from './monolog.sc'
-import Panel from './panel.sc'
+import Top_ from './top.sc'
 import React from 'react'
 
 const messages = [
@@ -11,14 +11,14 @@ const messages = [
 ]
 
 const Guest = () => (
-  <Panel>
+  <Top_>
     <Monolog>
       <AmosChat avatar={'large'}>
         {messages}
       </AmosChat>
     </Monolog>
     <AuthBox/>
-  </Panel>
+  </Top_>
 )
 
 export default Guest

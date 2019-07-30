@@ -1,3 +1,5 @@
+import Icon from 'components/icon/top.sc'
+import Text_ from './text.sc'
 import styled, {css} from 'styled-components'
 import {ifProp, prop} from 'common/style'
 
@@ -34,13 +36,15 @@ const Button_ = styled.button`
   user-select: none;
   width: ${prop(`width`, `auto`)};
 
-  > svg {
+  ${Icon} {
     height: 15px;
   }
-  > span {
+
+  ${Text_} {
     vertical-align: middle;
   }
-  > svg + span {
+
+  ${Icon} + ${Text_} {
     margin-left: 8px;
   }
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Monolog = styled.div`
-  align-items: flex-start;
+  /* align-items: flex-start;
   display: flex;
   flex-direction: column;
 
@@ -13,7 +13,7 @@ const Monolog = styled.div`
 
   @media (max-width: 768px) {
     align-items: stretch;
-  }
+  } */
 `
 
 export default Monolog

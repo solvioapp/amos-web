@@ -1,4 +1,4 @@
-import Top_ from './auth-options.sc'
+import Top_ from './top.sc'
 import React from 'react'
 import {Link} from 'react-router-dom'
 
