@@ -1,13 +1,13 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Input from 'components/input'
-import Monolog from '../monolog.sc'
+import Top_ from '../top.sc'
 import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
 
 const Guest = () => (
-  <Monolog>
+  <Top_ columns={'left'}>
     <AmosChat>
       Let's start with the links. Please enter the  URLs that lead to the resource 😇
     </AmosChat>
@@ -16,7 +16,7 @@ const Guest = () => (
     <Button primary onClick={navto(`/review/topics`)}>
       Next
     </Button>
-  </Monolog>
+  </Top_>
 )
 
 export default Guest

@@ -30,7 +30,7 @@ function LogIn({location, isAuthenticated, authorize}) {
     <Top_>
       {/* <Title>Log in</Title> */}
       <AmosChat>
-      {messages}
+        {messages}
       </AmosChat>
       <Input state={state}>
         Email
@@ -38,6 +38,10 @@ function LogIn({location, isAuthenticated, authorize}) {
       <Input state={state} type={`password`}>
         Password
       </Input>
+      {/* TODO: Conditional show */}
+      <AmosChat avatar={'none'}>
+        I don't know that email, password combination. 🙁
+      </AmosChat>
       <Button primary onClick={onSubmit}>
         Log in
       </Button>

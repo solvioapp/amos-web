@@ -1,13 +1,17 @@
-import styled from 'styled-components'
+import Button from 'components/button/top.sc'
+import Panel from 'components/panel/top.sc'
+import styled, {css} from 'styled-components'
 
-const Top_ = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 200px;
+const two = css``
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+const left = css`
+  > ${Button} {
+    margin-top: 30px
   }
+`
+
+const Top_ = styled(Panel)`
+  ${({columns}) => eval(columns)}
 `
 
 export default Top_

@@ -7,6 +7,10 @@ const one = css`
   align-items: center;
   max-width: 550px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    align-items: stretch;
+  }
 `
 
 const two = css`
@@ -16,6 +20,20 @@ const two = css`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    align-items: stretch;
+  }
+`
+
+const left = css`  
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+      align-items: stretch;
   }
 `
 

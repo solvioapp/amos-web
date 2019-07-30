@@ -1,6 +1,5 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
-import Monolog from './monolog.sc'
 import Top_ from './top.sc'
 import React from 'react'
 import {navto} from 'common/history'
@@ -12,12 +11,10 @@ const messages = [
 
 const Success = () => (
   <Top_>
-    <Monolog>
-      <AmosChat>{messages}</AmosChat>
-      <Button primary onClick={navto(`/review`)}>
-        Submit review
-      </Button>
-    </Monolog>
+    <AmosChat>{messages}</AmosChat>
+    <Button primary onClick={navto(`/review`)}>
+      Submit a Review
+    </Button>
   </Top_>
 )
 

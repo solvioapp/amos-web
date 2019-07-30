@@ -1,7 +1,7 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Input from 'components/input'
-import Monolog from '../monolog.sc'
+import Top_ from '../top.sc'
 import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
@@ -14,14 +14,14 @@ const messages = [
 ]
 
 const Authorized = () => (
-  <Monolog>
+  <Top_ columns={'left'}>
     <AmosChat>{messages}</AmosChat>
     <Title>Links</Title>
     <Input/>
     <Button primary onClick={navto(`/review/topics`)}>
       Next
     </Button>
-  </Monolog>
+  </Top_>
 )
 
 export default Authorized

@@ -1,8 +1,7 @@
 import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
 import Button from 'components/button'
-import Monolog from '../monolog.sc'
-import Panel from '../top.sc'
+import Top_ from '../top.sc'
 import React from 'react'
 import {navto} from 'common/history'
 
@@ -12,15 +11,15 @@ const messages = [
 ]
 
 const Guest = () => (
-  <Panel>
-    <Monolog>
+  <Top_ columns={'two'}>
+    <Top_ columns={'left'}>
       <AmosChat>{messages}</AmosChat>
       <Button primary onClick={navto(`/`)}>
         Submit anonymously
       </Button>
-    </Monolog>
+    </Top_>
     <AuthBox/>
-  </Panel>
+  </Top_>
 )
 
 export default Guest

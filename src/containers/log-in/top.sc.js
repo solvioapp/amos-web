@@ -6,11 +6,24 @@ import Panel from 'components/panel/top.sc'
 import styled from 'styled-components'
 
 const Top_ = styled(Panel)`
-  > ${AmosChat} {
-    margin-bottom: 40px;
+  > ${AmosChat}:first-of-type {
+    margin-top: 40px;
+  }
+
+  /* 
+    > ${AmosChat} + ${Input} {
+      margin-top: 24px;
+  } */
+
+  > ${Input}:nth-of-type(2) {
+    margin-top: 24px;
   }
 
   > ${Input} + ${Input} {
+    margin-top: 24px;
+  }
+
+  > ${Input} + ${AmosChat} {
     margin-top: 24px;
   }
 

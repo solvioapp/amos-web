@@ -1,6 +1,5 @@
 import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
-import Monolog from './monolog.sc'
 import Top_ from './top.sc'
 import React from 'react'
 
@@ -12,12 +11,9 @@ const messages = [
 
 const Guest = () => (
   <Top_ columns={'two'}>
-    <Monolog>
-      <AmosChat avatar={'large'}>
-        {messages}
-      </AmosChat>
-    </Monolog>
-
+    <AmosChat avatar={'large'}>
+      {messages}
+    </AmosChat>
     <AuthBox/>
   </Top_>
 )
