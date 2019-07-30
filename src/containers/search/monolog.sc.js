@@ -9,11 +9,11 @@ const Monolog = styled.div`
   > div + button,
   > input + button {
     margin-top: 30px;
-  }
+  } */
 
   @media (max-width: 768px) {
     align-items: stretch;
-  } */
+  }
 `
 
 export default Monolog

@@ -1,7 +1,7 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Monolog from './monolog.sc'
-import Top_ from 'components/panel'
+import Top_ from './top.sc'
 import React from 'react'
 import {navto} from 'common/history'
 

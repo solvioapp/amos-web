@@ -3,14 +3,14 @@ import Button from 'components/button'
 import connect from './connect'
 import Input from 'components/input'
 import Checkbox from 'components/checkbox'
-import Panel from 'components/panel'
+import Top_ from '../top.sc'
 import React, {useState} from 'react'
 import AuthOptions from 'components/auth-options';
 
 const Email = ({login}) => {
   const state = useState({email: `admin`, password: `123`})
   return (
-    <Panel>
+    <Top_>
       <AmosChat>
         Once you sign up, you'll be able to get reputation for your Reviews. And it's free!
       </AmosChat>
@@ -37,7 +37,7 @@ const Email = ({login}) => {
         link: '/sign-up',
         text: 'Use social'
       }}/>
-    </Panel>
+    </Top_>
   )
 }
 

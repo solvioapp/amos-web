@@ -1,6 +1,6 @@
-import styled from 'styled-components'
 import Button from 'components/button/top.sc'
 import AuthOptions from 'components/auth-options/top.sc'
+import styled from 'styled-components'
 
 const Top_ = styled.div`
   align-items: center;
@@ -9,11 +9,11 @@ const Top_ = styled.div`
   text-align: center;
   padding-top: 40px;
 
-  ${Button} + ${Button} {
+  > ${Button} + ${Button} {
     margin-top: 20px;
   }
 
-  ${AuthOptions} {
+  > ${AuthOptions} {
     margin-top: 20px;
   }
 `

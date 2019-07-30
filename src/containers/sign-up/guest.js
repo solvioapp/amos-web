@@ -1,6 +1,6 @@
 import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
-import Top_ from 'components/panel'
+import Top_ from './top.sc'
 import React from 'react'
 import Title from 'components/title'
 

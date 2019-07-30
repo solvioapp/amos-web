@@ -1,14 +1,15 @@
-import * as R from 'ramda'
+import connect from './connect'
+import {messages} from './constants'
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Input from 'components/input'
-import Panel from 'components/panel'
-import React, {useState} from 'react'
 import Title from 'components/title'
-import connect from './connect'
-import {Redirect} from 'react-router-dom'
 import AuthOptions from 'components/auth-options'
-import {messages} from './constants'
+import Top_ from './top.sc'
+import React, {useState} from 'react'
+import {Redirect} from 'react-router-dom'
+import * as R from 'ramda'
+
 
 const url = R.pathOr(`/`, [`state`, `from`])
 
@@ -26,7 +27,7 @@ function LogIn({location, isAuthenticated, authorize}) {
   }
 
   return (
-    <Panel>
+    <Top_>
       {/* <Title>Log in</Title> */}
       <AmosChat>
       {messages}
@@ -49,7 +50,7 @@ function LogIn({location, isAuthenticated, authorize}) {
           link: '/sign-up/email',
           text: 'Sign up'
         }}/>
-    </Panel>
+    </Top_>
   )
 }
 

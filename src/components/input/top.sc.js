@@ -1,9 +1,8 @@
 import Label_ from './label.sc'
 import styled from 'styled-components'
-import {prop} from 'common/style'
 
 
-const Top = styled.div`
+const Top_ = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -13,4 +12,4 @@ const Top = styled.div`
   }
 `
 
-export default Top
+export default Top_

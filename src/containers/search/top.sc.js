@@ -1,13 +1,7 @@
 import styled from 'styled-components'
+import Panel from 'components/panel/top.sc'
 
-const Top_ = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 200px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+const Top_ = styled(Panel)`
 `
 
 export default Top_

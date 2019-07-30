@@ -11,12 +11,13 @@ const messages = [
 ]
 
 const Guest = () => (
-  <Top_>
+  <Top_ columns={'two'}>
     <Monolog>
       <AmosChat avatar={'large'}>
         {messages}
       </AmosChat>
     </Monolog>
+
     <AuthBox/>
   </Top_>
 )

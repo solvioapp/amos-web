@@ -24,7 +24,7 @@ const iconOnly = css`
   }
 `
 
-const Button_ = styled.button`
+const Top_ = styled.button`
   background-color: white;
   border-radius: 8px;
   border: 1.3px solid #959595;
@@ -36,15 +36,15 @@ const Button_ = styled.button`
   user-select: none;
   width: ${prop(`width`, `auto`)};
 
-  ${Icon} {
+  > ${Icon} {
     height: 15px;
   }
 
-  ${Text_} {
+  > ${Text_} {
     vertical-align: middle;
   }
 
-  ${Icon} + ${Text_} {
+  > ${Icon} + ${Text_} {
     margin-left: 8px;
   }
 
@@ -62,4 +62,4 @@ const Button_ = styled.button`
   ${ifProp(`iconOnly`, iconOnly)}
 `
 
-export default Button_
+export default Top_
