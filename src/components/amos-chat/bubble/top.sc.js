@@ -14,7 +14,7 @@ const large = css`
   margin-top: ${AVATAR_SIZE_LARGE / 2 - 21.7 + 'px'}
 `
 
-const ChatBox = styled.div`
+const Top_ = styled.div`
   background-color: white;
   border-radius: 12px;
   border: 1.3px solid black;
@@ -28,4 +28,4 @@ const ChatBox = styled.div`
   ${props => eval(props.size)};
 `
 
-export default ChatBox
+export default Top_

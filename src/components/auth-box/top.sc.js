@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Panel = styled.div`
+const Top_ = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -16,4 +16,4 @@ const Panel = styled.div`
   }
 `
 
-export default Panel
+export default Top_

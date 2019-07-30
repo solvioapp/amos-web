@@ -1,12 +1,12 @@
-import Button from './button.sc'
-import Icon from '../icon'
+import Icon from 'components/icon'
+import Button_ from './button.sc'
 import React from 'react'
 
-const SexyButton = ({icon, children, ...rest}) => (
-  <Button iconOnly={icon && !children} {...rest}>
+const Button = ({icon, children, ...rest}) => (
+  <Button_ iconOnly={icon && !children} {...rest}>
     {icon && <Icon src={icon}/>}
     {children && <span>{children}</span>}
-  </Button>
+  </Button_>
 )
 
-export default SexyButton
+export default Button

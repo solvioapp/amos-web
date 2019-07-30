@@ -1,12 +1,12 @@
-import Cloud from './cloud.sc'
+import Top_ from './top.sc'
+import Tail_ from './tail.sc'
 import React from 'react'
-import Tail from './tail.sc'
 
 const Bubble = ({size, children}) => (
-  <Cloud size={size}>
-    <Tail/>
+  <Top_ size={size}>
+    <Tail_/>
     {children}
-  </Cloud>
+  </Top_>
 )
 
 export default Bubble

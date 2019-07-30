@@ -1,9 +1,10 @@
+import Top_ from './top.sc'
 import React from 'react'
 
 const NotFound = () => (
-  <div>
+  <Top_>
     Page not found
-  </div>
+  </Top_>
 )
 
 export default NotFound

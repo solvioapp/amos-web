@@ -1,5 +1,5 @@
 import React from 'react'
-import Svg from './svg.sc'
+import Top_ from './top.sc'
 import iconsList from './svg'
 
 function Icon({src, ...props}) {
@@ -8,9 +8,9 @@ function Icon({src, ...props}) {
     throw new Error(`No icon found: '${src}'`)
   }
   return (
-    <Svg viewBox={svg.viewBox} {...props}>
+    <Top_ viewBox={svg.viewBox} {...props}>
       <use xlinkHref={svg.url}/>
-    </Svg>
+    </Top_>
   )
 }
 

@@ -1,11 +1,10 @@
+import Top_ from './top.sc'
 import React from 'react'
-import Footer from './footer.sc'
 
-const _Footer = () => (
-  <Footer>
+const Footer = () => (
+  <Top_>
     Built with ❤️ and ☕️ by <a target="_blank" href="http://solvio.org">Solvio Foundation</a>. <a target="_blank" href="https://github.com/solviofoundation/amos/wiki">Help.</a>
-  </Footer>
+  </Top_>
 )
 
-export {Footer}
-export default _Footer
+export default Footer

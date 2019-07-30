@@ -17,7 +17,7 @@ const large = css`
   width: ${AVATAR_SIZE_LARGE + 'px'};
 `
 
-const Avatar = styled.img`
+const Avatar_ = styled.img`
   /* background-color: #f3f3f3;
   border-radius: 50%;
   border: 1px black solid; */
@@ -25,4 +25,4 @@ const Avatar = styled.img`
   ${props => eval(props.size)};
 `
 
-export default Avatar
+export default Avatar_

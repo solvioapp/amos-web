@@ -1,15 +1,15 @@
-import Content from './content.sc'
-import Footer from 'components/footer'
-import Layout from './layout.sc'
 import NavMenu from 'components/nav-menu'
+import Footer from 'components/footer'
+import Content_ from './content.sc'
+import Top_ from './top.sc'
 import React from 'react'
 
 const PageLayout = ({isAuthenticated, children}) => (
-  <Layout>
+  <Top_>
     <NavMenu isAuthenticated={isAuthenticated}/>
-    <Content>{children}</Content>
+    <Content_>{children}</Content_>
     <Footer/>
-  </Layout>
+  </Top_>
 )
 
 export default PageLayout

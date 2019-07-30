@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Content = styled.div`
+const Top_ = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -10,4 +10,4 @@ const Content = styled.div`
   padding: 30px;
 `
 
-export default Content
+export default Top_

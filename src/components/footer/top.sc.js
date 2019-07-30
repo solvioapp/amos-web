@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Footer = styled.footer`
+const Top_ = styled.footer`
   bottom: 0;
   color: black;
   font-size: 1rem;
@@ -19,4 +19,4 @@ const Footer = styled.footer`
   }
 `
 
-export default Footer
+export default Top_

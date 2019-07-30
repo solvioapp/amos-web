@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const AmosChat = styled.div`
+const Top_ = styled.div`
   align-items: flex-start;
   display: flex;
 
@@ -9,4 +9,4 @@ const AmosChat = styled.div`
   }
 `
 
-export default AmosChat
+export default Top_

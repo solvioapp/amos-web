@@ -22,7 +22,7 @@ const iconOnly = css`
   }
 `
 
-const Button = styled.button`
+const Button_ = styled.button`
   background-color: white;
   border-radius: 8px;
   border: 1.3px solid #959595;
@@ -58,4 +58,4 @@ const Button = styled.button`
   ${ifProp(`iconOnly`, iconOnly)}
 `
 
-export default Button
+export default Button_

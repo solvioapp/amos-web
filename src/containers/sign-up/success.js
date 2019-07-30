@@ -1,7 +1,7 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Monolog from './monolog.sc'
-import Panel from './panel.sc'
+import Top_ from 'components/panel'
 import React from 'react'
 import {navto} from 'common/history'
 
@@ -11,14 +11,14 @@ const messages = [
 ]
 
 const Success = () => (
-  <Panel>
+  <Top_>
     <Monolog>
       <AmosChat>{messages}</AmosChat>
       <Button primary onClick={navto(`/review`)}>
         Submit review
       </Button>
     </Monolog>
-  </Panel>
+  </Top_>
 )
 
 export default Success

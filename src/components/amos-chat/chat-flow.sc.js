@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Monolog = styled.div `
+const ChatFlow_ = styled.div `
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -19,4 +19,4 @@ const Monolog = styled.div `
   }
 `
 
-export default Monolog
+export default ChatFlow_
