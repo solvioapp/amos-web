@@ -4,7 +4,7 @@ import Input_ from './input.sc'
 import Label_ from './label.sc'
 import * as R from 'ramda'
 
-const Input = ({state: [state, setState] = [{}], children: name, type = 'text'}) => {
+const Input = ({state: [state, setState] = [{}], children: name, type = 'text', ...rest}) => {
   const onChange = event => {
     const newState = R.merge(
       state,
@@ -14,7 +14,7 @@ const Input = ({state: [state, setState] = [{}], children: name, type = 'text'})
   }
 
   return (
-    <Top_>
+    <Top_ {...rest}>
       <Label_>{name}</Label_>
       <Input_ 
         placeholder={name}

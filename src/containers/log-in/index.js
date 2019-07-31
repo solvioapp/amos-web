@@ -10,7 +10,6 @@ import React, {useState} from 'react'
 import {Redirect} from 'react-router-dom'
 import * as R from 'ramda'
 
-
 const url = R.pathOr(`/`, [`state`, `from`])
 
 function LogIn({location, isAuthenticated, authorize}) {
@@ -26,13 +25,14 @@ function LogIn({location, isAuthenticated, authorize}) {
     authorize(email, password)
   }
 
+
   return (
     <Top_>
       {/* <Title>Log in</Title> */}
       <AmosChat>
         {messages}
       </AmosChat>
-      <Input state={state}>
+      <Input state={state} id={'first'}>
         Email
       </Input>
       <Input state={state} type={`password`}>
