@@ -29,10 +29,10 @@ function LogIn({location, isAuthenticated, authorize, ...rest}) {
   return (
     <Top_ {...rest}>
       {/* <Title>Log in</Title> */}
-      <AmosChat id={'first'}>
+      <AmosChat id={'AmosChat1'}>
         {messages}
       </AmosChat>
-      <Input state={state} id={'first'}>
+      <Input state={state} id={'Input1'}>
         Email
       </Input>
       <Input state={state} type={`password`}>
