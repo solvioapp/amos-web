@@ -1,4 +1,7 @@
+import Top_ from './top.sc'
 import AmosChat from 'components/amos-chat'
+import Button from 'components/button'
+import {navto} from 'common/history'
 import React from 'react'
 
 const messages = [
@@ -9,7 +12,12 @@ const messages = [
 ]
 
 const Authorized = ({...rest}) => (
-  <AmosChat {...rest}>{messages}</AmosChat>
+  <Top_ {...rest}>
+    <AmosChat>{messages}</AmosChat>
+    <Button primary onClick={navto(`/review`)}>
+      Submit a Review
+    </Button>
+  </Top_>
 )
 
 export default Authorized

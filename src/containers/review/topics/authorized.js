@@ -8,7 +8,7 @@ import Title from 'components/title'
 import {navto} from 'common/history'
 
 const Authorized = ({...rest}) => (
-  <Top_ columns={'left'} {...rest}>
+  <Top_ {...rest}>
     <Title>Topics</Title>
     <AmosChat>
       What topics is the resource on? Try to be as specific as possible to get the most Rep.

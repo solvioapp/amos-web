@@ -2,8 +2,8 @@ import Top_ from './top.sc'
 import Tail_ from './tail.sc'
 import React from 'react'
 
-const Bubble = ({size, children}) => (
-  <Top_ size={size}>
+const Bubble = ({children}) => (
+  <Top_>
     <Tail_/>
     {children}
   </Top_>

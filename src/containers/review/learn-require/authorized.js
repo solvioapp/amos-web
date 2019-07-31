@@ -1,11 +1,11 @@
 import AmosChat from 'components/amos-chat'
-import Button from 'components/button'
-import Buttons from '../buttons.sc'
-import Input from 'components/input'
-import Top_ from '../top.sc'
-import React from 'react'
 import Title from 'components/title'
+import Button from 'components/button'
+import Input from 'components/input'
+import Buttons from '../buttons.sc'
+import Top_ from '../top.sc'
 import {navto} from 'common/history'
+import React from 'react'
 
 const Authorized = ({...rest}) => (
   <Top_ {...rest}>

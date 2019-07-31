@@ -8,14 +8,15 @@ import {navto} from 'common/history'
 const Guest = ({...rest}) => (
   <Top_ columns={'two'} {...rest}>
     <Top_ columns={'left'}>
-      <AmosChat avatar={'large'}>
+      <AmosChat avatar={'large'} callToAction={
+        <Button primary onClick={navto(`/review/links`)}>
+          Submit anonymously
+        </Button>
+      }>
         Here you can add reviews for online learning resources - either anonymously or
         by signing up. I would recommend signing up first because then you can get reputation
         for your reviews. 🙂
       </AmosChat>
-      <Button primary onClick={navto(`/review/links`)}>
-        Submit anonymously
-      </Button>
     </Top_>
     <AuthBox/>
   </Top_>

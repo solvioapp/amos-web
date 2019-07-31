@@ -14,7 +14,7 @@ const messages = [
 ]
 
 const Authorized = ({rest}) => (
-  <Top_ columns={'left'} {...rest}>
+  <Top_ {...rest}>
     <AmosChat>{messages}</AmosChat>
     <Title>Links</Title>
     <Input/>

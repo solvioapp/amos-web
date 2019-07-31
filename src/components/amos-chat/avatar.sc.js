@@ -8,13 +8,14 @@ const none = css`
 `
 
 const regular = css`
-  height: ${AVATAR_SIZE_REGULAR + 'px'};
-  width: ${AVATAR_SIZE_REGULAR + 'px'};
+  height: ${AVATAR_SIZE_REGULAR}px;
+  width: ${AVATAR_SIZE_REGULAR}px;
+  margin-top: ${AVATAR_SIZE_REGULAR / 2 - 21.7+ (AVATAR_SIZE_LARGE - AVATAR_SIZE_REGULAR) / 2}px;
 `
 
 const large = css`
-  height: ${AVATAR_SIZE_LARGE + 'px'};
-  width: ${AVATAR_SIZE_LARGE + 'px'};
+  height: ${AVATAR_SIZE_LARGE}px;
+  width: ${AVATAR_SIZE_LARGE}px;
 `
 
 const Avatar_ = styled.img`

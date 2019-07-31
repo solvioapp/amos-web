@@ -7,7 +7,7 @@ import Title from 'components/title'
 import {navto} from 'common/history'
 
 const Guest = ({...rest}) => (
-  <Top_ columns={'left'}  {...rest}>
+  <Top_ {...rest}>
     <AmosChat>
       Let's start with the links. Please enter the  URLs that lead to the resource 😇
     </AmosChat>
