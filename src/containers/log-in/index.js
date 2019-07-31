@@ -29,7 +29,7 @@ function LogIn({location, isAuthenticated, authorize, ...rest}) {
   return (
     <Top_ {...rest}>
       {/* <Title>Log in</Title> */}
-      <AmosChat id={'AmosChat1'}>
+      <AmosChat>
         {messages}
       </AmosChat>
       <Input state={state} id={'Input1'}>
