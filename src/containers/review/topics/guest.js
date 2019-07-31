@@ -9,11 +9,11 @@ import {navto} from 'common/history'
 
 const Guest = ({...rest}) => (
   <Top_ {...rest}>
-    <Title>Topics</Title>
     <AmosChat>
       What topics is the resource on?
       Try to be as specific as possible to get the most Rep.
     </AmosChat>
+    <Title>Topics</Title>
     <Input />
     <Buttons>
       <Button onClick={navto(`/review/links`)}>

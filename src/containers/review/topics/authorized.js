@@ -14,10 +14,10 @@ const messages = [
 
 const Authorized = ({...rest}) => (
   <Top_ {...rest}>
-    <Title>Topics</Title>
     <AmosChat>
       {messages}
     </AmosChat>
+    <Title>Topics</Title>
     <Input />
     <Buttons>
       <Button onClick={navto(`/review/links`)}>

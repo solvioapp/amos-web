@@ -9,11 +9,11 @@ import React from 'react'
 
 const Authorized = ({...rest}) => (
   <Top_ {...rest}>
-    <Title>Learning requirements</Title>
     <AmosChat>
       What do you need to know in order to make the most out of this resource?
       Again, try to be as detailed as possible.
     </AmosChat>
+    <Title>Learning requirements</Title>
     <Input/>
     <Buttons>
       <Button onClick={navto(`/review/topics`)}>
