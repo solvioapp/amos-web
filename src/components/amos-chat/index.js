@@ -9,13 +9,13 @@ const toBubble = (text, key) => (
   <Bubble key={key}>{typeof text === 'function' ? text() : text}</Bubble>
 )
 
-const AmosChat = ({avatar = 'regular', children}) => {
+const AmosChat = ({avatar = 'regular', children, ...rest}) => {
   if (typeof children === `string`) {
      children = [children]
   }
 
   return (
-    <Top_>
+    <Top_ {...rest}>
       {avatar !== 'none' && <Avatar_ size={avatar} src={image}/>}
       <ChatFlow_>
         <Bubble size={avatar}>{children[0]}</Bubble>

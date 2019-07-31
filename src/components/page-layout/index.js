@@ -4,8 +4,8 @@ import Content_ from './content.sc'
 import Top_ from './top.sc'
 import React from 'react'
 
-const PageLayout = ({isAuthenticated, children}) => (
-  <Top_>
+const PageLayout = ({isAuthenticated, children, ...rest}) => (
+  <Top_ {...rest}>
     <NavMenu isAuthenticated={isAuthenticated}/>
     <Content_>{children}</Content_>
     <Footer/>

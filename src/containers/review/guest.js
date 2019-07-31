@@ -5,8 +5,8 @@ import Top_ from './top.sc'
 import React from 'react'
 import {navto} from 'common/history'
 
-const Guest = () => (
-  <Top_ columns={'two'}>
+const Guest = ({...rest}) => (
+  <Top_ columns={'two'} {...rest}>
     <Top_ columns={'left'}>
       <AmosChat avatar={'large'}>
         Here you can add reviews for online learning resources - either anonymously or

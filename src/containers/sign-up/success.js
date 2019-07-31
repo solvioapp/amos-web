@@ -9,8 +9,8 @@ const messages = [
   () => <span>Now - let's get to work! 🖌 📚 <br/> Go ahead and ...</span>,
 ]
 
-const Success = () => (
-  <Top_>
+const Success = ({...rest}) => (
+  <Top_ {...rest}>
     <AmosChat>{messages}</AmosChat>
     <Button primary onClick={navto(`/review`)}>
       Submit a Review

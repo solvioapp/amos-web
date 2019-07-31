@@ -3,10 +3,10 @@ import Link_ from './link.sc'
 import React from 'react'
 import {withRouter} from 'react-router-dom'
 
-const NavMenu = ({isAuthenticated, history: {location: {pathname: path}}}) => {
+const NavMenu = ({isAuthenticated, history: {location: {pathname: path}}, ...rest}) => {
   const logIn = path === '/log-in'
   return (
-    <Top_>
+    <Top_ {...rest}>
       <Link_ to="/review">Review</Link_>
       <Link_ to="/search">Search</Link_>
       <Link_ to="/notifications" hidden={!isAuthenticated}>

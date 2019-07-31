@@ -8,8 +8,8 @@ const messages = [
   // `Oh and introduce me to your friends. My address is www.amos.ms... Let's keep this product alive 😉`,
 ]
 
-const Authorized = () => (
-  <AmosChat>{messages}</AmosChat>
+const Authorized = ({...rest}) => (
+  <AmosChat {...rest}>{messages}</AmosChat>
 )
 
 export default Authorized

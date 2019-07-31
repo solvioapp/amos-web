@@ -7,8 +7,8 @@ import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
 
-const Guest = () => (
-  <Top_ columns={'left'}>
+const Guest = ({...rest}) => (
+  <Top_ columns={'left'} {...rest}>
     <Title>Topics</Title>
     <AmosChat>
       What topics is the resource on?

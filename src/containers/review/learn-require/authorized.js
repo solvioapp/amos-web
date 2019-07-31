@@ -7,8 +7,8 @@ import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
 
-const Authorized = () => (
-  <Top_>
+const Authorized = ({...rest}) => (
+  <Top_ {...rest}>
     <Title>Learning requirements</Title>
     <AmosChat>
       What do you need to know in order to make the most out of this resource?

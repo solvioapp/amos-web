@@ -1,8 +1,8 @@
 import AmosChat from 'components/amos-chat'
 import React from 'react'
 
-const Authorized = () => (
-  <AmosChat>
+const Authorized = ({...rest}) => (
+  <AmosChat {...rest}>
     Thank you ☺️ Smarter every day! I'll let you know if you get Rep for that review ✌️
   </AmosChat>
 )

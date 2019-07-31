@@ -13,8 +13,8 @@ const messages = [
   `Let's start with the links. Please enter the  URLs that lead to the resource 😇`
 ]
 
-const Authorized = () => (
-  <Top_ columns={'left'}>
+const Authorized = ({rest}) => (
+  <Top_ columns={'left'} {...rest}>
     <AmosChat>{messages}</AmosChat>
     <Title>Links</Title>
     <Input/>

@@ -10,8 +10,8 @@ const messages = [
   `This is the last chance to get Reputation for this fantastic review by signing up. 🤟`,
 ]
 
-const Guest = () => (
-  <Top_ columns={'two'}>
+const Guest = ({...rest}) => (
+  <Top_ columns={'two'} {...rest}>
     <Top_ columns={'left'}>
       <AmosChat>{messages}</AmosChat>
       <Button primary onClick={navto(`/`)}>

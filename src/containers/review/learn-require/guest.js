@@ -7,8 +7,8 @@ import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
 
-const Guest = () => (
-  <Top_ columns={'left'}>
+const Guest = ({...rest}) => (
+  <Top_ columns={'left'} {...rest}>
     <Title>Learning requirements</Title>
     <AmosChat>
       What do you need to know in order to make the most out of this resource?

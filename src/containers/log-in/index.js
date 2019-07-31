@@ -12,7 +12,7 @@ import * as R from 'ramda'
 
 const url = R.pathOr(`/`, [`state`, `from`])
 
-function LogIn({location, isAuthenticated, authorize}) {
+function LogIn({location, isAuthenticated, authorize, ...rest}) {
   if (isAuthenticated) {
     return <Redirect to={url(location)}/>
   }
@@ -27,9 +27,9 @@ function LogIn({location, isAuthenticated, authorize}) {
 
 
   return (
-    <Top_>
+    <Top_ {...rest}>
       {/* <Title>Log in</Title> */}
-      <AmosChat>
+      <AmosChat id={'first'}>
         {messages}
       </AmosChat>
       <Input state={state} id={'first'}>

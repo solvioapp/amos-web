@@ -9,8 +9,8 @@ const messages = [
   `So I need your help! Create an account and submit reviews for your favorite learning resources. Vamos, amigo! 🤗`,
 ]
 
-const Guest = () => (
-  <Top_ columns={'two'}>
+const Guest = ({...rest}) => (
+  <Top_ columns={'two'} {...rest}>
     <AmosChat avatar={'large'}>
       {messages}
     </AmosChat>

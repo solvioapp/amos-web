@@ -1,8 +1,8 @@
 import Top_ from './top.sc'
 import React from 'react'
 
-const NotFound = () => (
-  <Top_>
+const NotFound = ({...rest}) => (
+  <Top_ {...rest}>
     Page not found
   </Top_>
 )

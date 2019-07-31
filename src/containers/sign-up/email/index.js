@@ -7,10 +7,10 @@ import Top_ from '../top.sc'
 import React, {useState} from 'react'
 import AuthOptions from 'components/auth-options';
 
-const Email = ({login}) => {
+const Email = ({login, ...rest}) => {
   const state = useState({email: `admin`, password: `123`})
   return (
-    <Top_>
+    <Top_ {...rest}>
       <AmosChat>
         Once you sign up, you'll be able to get reputation for your Reviews. And it's free!
       </AmosChat>

@@ -4,8 +4,8 @@ import Top_ from './top.sc'
 import React from 'react'
 import Title from 'components/title'
 
-const Guest = () => (
-  <Top_>
+const Guest = ({...rest}) => (
+  <Top_ {...rest}>
     {/* <Title>Sign up</Title> */}
     <AmosChat>
       Once you sign up, you'll be able to get reputation for your Reviews. And it's free!

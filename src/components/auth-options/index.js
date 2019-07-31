@@ -11,10 +11,10 @@ const AuthOptions = ({
     link: '/log-in',
     text: 'Log in'
   }
-}) => {
+}, ...rest) => {
 
   return (
-    <Top_>
+    <Top_ {...rest}>
       <Link to={first.link}>{first.text}</Link>
       &nbsp;
       {` • `}
