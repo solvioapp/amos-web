@@ -13,10 +13,11 @@ const messages = [
 const Guest = ({...rest}) => (
   <Top_ columns={'two'} {...rest}>
     <Top_ columns={'left'}>
-      <AmosChat>{messages}</AmosChat>
-      <Button primary onClick={navto(`/`)}>
-        Submit anonymously
-      </Button>
+      <AmosChat callToAction={
+        <Button primary onClick={navto(`/`)}>
+          Submit anonymously
+        </Button>
+      }>{messages}</AmosChat>
     </Top_>
     <AuthBox/>
   </Top_>

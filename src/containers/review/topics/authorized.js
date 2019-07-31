@@ -7,11 +7,16 @@ import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
 
+const messages = [
+  `What topics is the resource on? Try to be as specific as possible to get the most Rep.`,
+  `Btw, your submissions will be private for now. 🕵🏼‍`
+]
+
 const Authorized = ({...rest}) => (
   <Top_ {...rest}>
     <Title>Topics</Title>
     <AmosChat>
-      What topics is the resource on? Try to be as specific as possible to get the most Rep.
+      {messages}
     </AmosChat>
     <Input />
     <Buttons>

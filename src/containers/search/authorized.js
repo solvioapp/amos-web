@@ -13,10 +13,12 @@ const messages = [
 
 const Authorized = ({...rest}) => (
   <Top_ {...rest}>
-    <AmosChat>{messages}</AmosChat>
-    <Button primary onClick={navto(`/review`)}>
-      Submit a Review
-    </Button>
+    <AmosChat callToAction={
+        <Button primary onClick={navto(`/review`)}>
+          Submit a Review
+        </Button>}>
+      {messages}
+    </AmosChat>
   </Top_>
 )
 
