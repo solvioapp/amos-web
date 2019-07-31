@@ -1,8 +1,8 @@
-import React from 'react'
 import styled from 'styled-components'
 import {prop} from 'common/style'
+import React from 'react'
 
-const AppCheckbox = styled.span `
+const Checkbox_ = styled.span `
 
   display: flex;
   align-items: center;
@@ -53,4 +53,4 @@ const AppCheckbox = styled.span `
   }
 `
 
-export default AppCheckbox
+export default Checkbox_

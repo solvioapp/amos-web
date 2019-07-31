@@ -1,12 +1,13 @@
+import ChatFlow_ from './chat-flow.sc'
 import styled from 'styled-components'
 
-const Layout = styled.div`
+const Top_ = styled.div`
   align-items: flex-start;
   display: flex;
 
-  > img + div {
+  > ${ChatFlow_} {
     margin-left: 50px;
   }
 `
 
-export default Layout
+export default Top_

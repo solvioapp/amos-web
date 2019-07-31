@@ -2,17 +2,22 @@ import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Buttons from '../buttons.sc'
 import Input from 'components/input'
-import Monolog from '../monolog.sc'
+import Top_ from '../top.sc'
 import React from 'react'
 import Title from 'components/title'
 import {navto} from 'common/history'
 
-const Authorized = () => (
-  <Monolog>
-    <Title>Topics</Title>
+const messages = [
+  `What topics is the resource on? Try to be as specific as possible to get the most Rep.`,
+  `Btw, your submissions will be private for now. 🕵🏼‍`
+]
+
+const Authorized = ({...rest}) => (
+  <Top_ {...rest}>
     <AmosChat>
-      What topics is the resource on? Try to be as specific as possible to get the most Rep.
+      {messages}
     </AmosChat>
+    <Title>Topics</Title>
     <Input />
     <Buttons>
       <Button onClick={navto(`/review/links`)}>
@@ -25,7 +30,7 @@ const Authorized = () => (
         Finish
       </Button>
     </Buttons>
-  </Monolog>
+  </Top_>
 )
 
 export default Authorized

@@ -1,3 +1,5 @@
+import Icon from 'components/icon/top.sc'
+import Text_ from './text.sc'
 import styled, {css} from 'styled-components'
 import {ifProp, prop} from 'common/style'
 
@@ -22,7 +24,7 @@ const iconOnly = css`
   }
 `
 
-const Button = styled.button`
+const Top_ = styled.button`
   background-color: white;
   border-radius: 8px;
   border: 1.3px solid #959595;
@@ -34,13 +36,15 @@ const Button = styled.button`
   user-select: none;
   width: ${prop(`width`, `auto`)};
 
-  > svg {
+  > ${Icon} {
     height: 15px;
   }
-  > span {
+
+  > ${Text_} {
     vertical-align: middle;
   }
-  > svg + span {
+
+  > ${Icon} + ${Text_} {
     margin-left: 8px;
   }
 
@@ -58,4 +62,4 @@ const Button = styled.button`
   ${ifProp(`iconOnly`, iconOnly)}
 `
 
-export default Button
+export default Top_

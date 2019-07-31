@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Menu = styled.div`
+const Top_ = styled.div`
   padding: 20px;
   text-align: center;
 
@@ -9,4 +9,4 @@ const Menu = styled.div`
   }
 `
 
-export default Menu
+export default Top_

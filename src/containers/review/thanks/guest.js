@@ -1,8 +1,7 @@
 import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
 import Button from 'components/button'
-import Monolog from '../monolog.sc'
-import Panel from '../panel.sc'
+import Top_ from '../top.sc'
 import React from 'react'
 import {navto} from 'common/history'
 
@@ -11,16 +10,17 @@ const messages = [
   `This is the last chance to get Reputation for this fantastic review by signing up. 🤟`,
 ]
 
-const Guest = () => (
-  <Panel>
-    <Monolog>
-      <AmosChat>{messages}</AmosChat>
-      <Button primary onClick={navto(`/`)}>
-        Submit anonymously
-      </Button>
-    </Monolog>
+const Guest = ({...rest}) => (
+  <Top_ columns={'two'} {...rest}>
+    <Top_ columns={'left'}>
+      <AmosChat callToAction={
+        <Button primary onClick={navto(`/`)}>
+          Submit anonymously
+        </Button>
+      }>{messages}</AmosChat>
+    </Top_>
     <AuthBox/>
-  </Panel>
+  </Top_>
 )
 
 export default Guest

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ChatBox = styled.div`
+const Tail_ = styled.div`
   height: 12px;
   left: -10px;
   overflow: hidden;
@@ -22,4 +22,4 @@ const ChatBox = styled.div`
   }
 `
 
-export default ChatBox
+export default Tail_

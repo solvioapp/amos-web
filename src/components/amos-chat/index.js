@@ -1,29 +1,31 @@
-import Box from './box.sc'
-import Avatar from './avatar.sc'
-import Bubble from './bubble'
-import ChatFlow from './chat-flow.sc'
-import React from 'react'
 import image from './amos.gif'
+import Bubble from './bubble'
+import Top_ from './top.sc'
+import Avatar_ from './avatar.sc'
+import ChatFlow_ from './chat-flow.sc'
+import React from 'react'
 
-const toBubble = (text, key) => (
-  <Bubble key={key}>{text}</Bubble>
+const toText = child => typeof child === 'function' ? child() : child
+
+const toBubble = (child, key) => (
+  <Bubble key={key}>{toText(child)}</Bubble>
 )
 
-function AmosChat({avatar, children}) {
-  if (typeof children === `string`) {
+const AmosChat = ({avatar = 'regular', children, callToAction, ...rest}) => {
+  if (typeof children !== `object`) {
+    // children is either a string or a function, not an array
      children = [children]
   }
 
-  avatar = avatar || 'regular'
-
   return (
-    <Box>
-      <Avatar size={avatar} src={image}/>
-      <ChatFlow>
-        <Bubble size={avatar}>{children[0]}</Bubble>
+    <Top_ {...rest}>
+      {avatar !== 'none' && <Avatar_ size={avatar} src={image}/>}
+      <ChatFlow_ size={avatar}>
+        <Bubble>{toText(children[0])}</Bubble>
         {children.slice(1).map(toBubble)}
-      </ChatFlow>
-    </Box>
+        {callToAction}
+      </ChatFlow_>
+    </Top_>
   )
 }
 

@@ -1,59 +1,60 @@
-import * as R from 'ramda'
+import connect from './connect'
+import {messages} from './constants'
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Input from 'components/input'
-import Panel from './panel.sc'
-import React from 'react'
 import Title from 'components/title'
-import connect from './connect'
+import AuthOptions from 'components/auth-options'
+import Top_ from './top.sc'
+import React, {useState} from 'react'
 import {Redirect} from 'react-router-dom'
-import {useState} from 'react'
+import * as R from 'ramda'
 
-const makeInput = ([state, setState]) => (name, type) => {
-  const onChange = event => {
-    const newState = R.merge(
-      state,
-      {[name]: event.target.value}
-    )
-    setState(newState)
-  }
-  return (
-    <Input
-      placeholder={name}
-      type={type}
-      value={state[name]}
-      onChange={onChange}
-    />
-  )
-}
+const url = R.pathOr(`/`, [`state`, `from`])
 
-const url = R.pathOr(`/`, [`location`, `state`, `from`])
-const messages = [
-  `Welcome back! 🎊`,
-  `Purpose of this form is to test PrivateRoute. Use password 123 to sign in`
-]
-
-function LogIn(props) {
-  if (props.isAuthenticated) {
-    return <Redirect to={url(props)}/>
+function LogIn({location, isAuthenticated, authorize, ...rest}) {
+  if (isAuthenticated) {
+    return <Redirect to={url(location)}/>
   }
 
   const state = useState({email: `admin`, password: `123`})
-  const input = makeInput(state)
+
   const onSubmit = event => {
     event.preventDefault()
     const [{email, password}] = state
-    props.authorize(email, password)
+    authorize(email, password)
   }
 
+
   return (
-    <Panel>
-      <Title>Log in</Title>
-      <AmosChat>{messages}</AmosChat>
-      {input(`email`, `text`)}
-      {input(`password`, `password`)}<br/><br/>
-      <Button primary onClick={onSubmit}>LOG IN</Button>
-    </Panel>
+    <Top_ {...rest}>
+      {/* <Title>Log in</Title> */}
+      <AmosChat>
+        {messages}
+      </AmosChat>
+      <Input state={state} id={'Input1'}>
+        Email
+      </Input>
+      <Input state={state} type={`password`}>
+        Password
+      </Input>
+      {/* TODO: Conditional show */}
+      <AmosChat avatar={'none'}>
+        I don't know that email, password combination. 🙁
+      </AmosChat>
+      <Button primary onClick={onSubmit}>
+        Log in
+      </Button>
+      <AuthOptions
+        first={{
+          link: '/sign-up',
+          text: 'Use social'
+        }}
+        second={{
+          link: '/sign-up/email',
+          text: 'Sign up'
+        }}/>
+    </Top_>
   )
 }
 

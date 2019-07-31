@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {NavLink} from 'react-router-dom'
 import {ifProp} from 'common/style'
 
-const Link = styled(NavLink)`
+const Link_ = styled(NavLink)`
   color: black;
   display: ${ifProp(`hidden`, `none`, `inline`)};
   font-size: 20px;
@@ -27,4 +27,4 @@ const Link = styled(NavLink)`
   }
 `
 
-export default Link
+export default Link_

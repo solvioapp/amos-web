@@ -1,7 +1,6 @@
 import AmosChat from 'components/amos-chat'
 import AuthBox from 'components/auth-box'
-import Monolog from './monolog.sc'
-import Panel from './panel.sc'
+import Top_ from './top.sc'
 import React from 'react'
 
 const messages = [
@@ -10,15 +9,13 @@ const messages = [
   `So I need your help! Create an account and submit reviews for your favorite learning resources. Vamos, amigo! 🤗`,
 ]
 
-const Guest = () => (
-  <Panel>
-    <Monolog>
-      <AmosChat avatar={'large'}>
-        {messages}
-      </AmosChat>
-    </Monolog>
+const Guest = ({...rest}) => (
+  <Top_ columns={'two'} {...rest}>
+    <AmosChat avatar={'large'}>
+      {messages}
+    </AmosChat>
     <AuthBox/>
-  </Panel>
+  </Top_>
 )
 
 export default Guest

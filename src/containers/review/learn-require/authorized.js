@@ -1,19 +1,19 @@
 import AmosChat from 'components/amos-chat'
-import Button from 'components/button'
-import Buttons from '../buttons.sc'
-import Input from 'components/input'
-import Monolog from '../monolog.sc'
-import React from 'react'
 import Title from 'components/title'
+import Button from 'components/button'
+import Input from 'components/input'
+import Buttons from '../buttons.sc'
+import Top_ from '../top.sc'
 import {navto} from 'common/history'
+import React from 'react'
 
-const Authorized = () => (
-  <Monolog>
-    <Title>Learning requirements</Title>
+const Authorized = ({...rest}) => (
+  <Top_ {...rest}>
     <AmosChat>
       What do you need to know in order to make the most out of this resource?
       Again, try to be as detailed as possible.
     </AmosChat>
+    <Title>Learning requirements</Title>
     <Input/>
     <Buttons>
       <Button onClick={navto(`/review/topics`)}>
@@ -23,7 +23,7 @@ const Authorized = () => (
         Finish
       </Button>
     </Buttons>
-  </Monolog>
+  </Top_>
 )
 
 export default Authorized

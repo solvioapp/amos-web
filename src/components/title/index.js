@@ -1,7 +1,10 @@
-import styled from 'styled-components'
+import Top_ from './top.sc'
+import React from 'react'
 
-const Title = styled.h1`
-
-`
+const Title = ({children, ...rest}) => (
+  <Top_ {...rest}>
+    {children}
+  </Top_>
+)
 
 export default Title

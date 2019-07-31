@@ -1,14 +1,14 @@
+import Top_ from './top.sc'
+import Checkbox_ from './checkbox.sc'
 import React from 'react'
-import Panel from './panel.sc'
-import Checkbox from './checkbox.sc'
 
-const AppCheckbox = ({children}) => (
-  <Panel>
-    <Checkbox checkboxSize={20} checkboxBorderSize={2}>
+const Checkbox = ({children, ...rest}) => (
+  <Top_ {...rest}>
+    <Checkbox_ checkboxSize={20} checkboxBorderSize={2}>
       <input type="checkbox" defaultChecked/>
-    </Checkbox>
+    </Checkbox_>
     {children}
-  </Panel>
+  </Top_>
 )
 
-export default AppCheckbox
+export default Checkbox

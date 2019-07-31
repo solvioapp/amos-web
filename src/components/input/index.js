@@ -1,13 +1,29 @@
 import React from 'react'
-import Panel from './panel.sc'
-import Input from './input.sc'
-import Label from './label.sc'
+import Top_ from './top.sc'
+import Input_ from './input.sc'
+import Label_ from './label.sc'
+import * as R from 'ramda'
 
-const AppInput = ({children}) => (
-  <Panel>
-    <Label>{children}</Label>
-    <Input placeholder={children}/>
-  </Panel>
-)
+const Input = ({state: [state, setState] = [{}], children: name, type = 'text', ...rest}) => {
+  const onChange = event => {
+    const newState = R.merge(
+      state,
+      {[name]: event.target.value}
+    )
+    setState(newState)
+  }
 
-export default AppInput
+  return (
+    <Top_ {...rest}>
+      <Label_>{name}</Label_>
+      <Input_ 
+        placeholder={name}
+        type={type}
+        value={state[name]}
+        onChange={onChange}
+      />
+    </Top_>
+  )
+}
+
+export default Input
