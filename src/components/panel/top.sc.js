@@ -33,7 +33,7 @@ const left = css`
   flex-direction: column;
 
   @media (max-width: 768px) {
-      align-items: stretch;
+    align-items: stretch;
   }
 `
 
