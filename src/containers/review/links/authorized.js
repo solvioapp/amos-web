@@ -1,10 +1,11 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
 import Input from 'components/input'
-import Top_ from '../top.sc'
-import React from 'react'
 import Title from 'components/title'
+import Top_ from '../top.sc'
+import InputForm_ from '../input-form.sc';
 import {navto} from 'common/history'
+import React from 'react'
 
 const messages = [
   `Help me link the world's knowledge! You can submit reviews for online learning resources.
@@ -16,11 +17,13 @@ const messages = [
 const Authorized = ({rest}) => (
   <Top_ {...rest}>
     <AmosChat>{messages}</AmosChat>
-    <Title>Links</Title>
-    <Input/>
-    <Button primary onClick={navto(`/review/topics`)}>
-      Next
-    </Button>
+    <InputForm_>
+      <Title>Links</Title>
+      <Input/>
+      <Button primary onClick={navto(`/review/topics`)}>
+        Next
+      </Button>
+    </InputForm_>
   </Top_>
 )
 
