@@ -1,60 +1,80 @@
-import connect from './connect'
-import {messages} from './constants'
-import AmosChat from 'components/amos-chat'
-import Button from 'components/button'
-import Input from 'components/input'
-import Title from 'components/title'
-import AuthOptions from 'components/auth-options'
-import Top_ from './top.sc'
-import React, {useState} from 'react'
-import {Redirect} from 'react-router-dom'
 import * as R from 'ramda'
+import * as yup from 'yup'
+import AmosChat from 'components/amos-chat'
+import AuthOptions from 'components/auth-options'
+import Button from 'components/button'
+import Form from './form.sc'
+import Input from 'components/input'
+import Link from './link.sc'
+import React from 'react'
+import connect from './connect'
+import useForm from "react-hook-form"
+import {Redirect} from 'react-router-dom'
 
 const url = R.pathOr(`/`, [`state`, `from`])
 
-function LogIn({location, isAuthenticated, authorize, ...rest}) {
+const defMessage = ({isSubmitted}) => (
+  isSubmitted ? `It looks okey, let's login!` : `Welcome back! 🎊`
+)
+
+const validationSchema = yup.object().shape({
+  email: yup.string().email().required(),
+  password: yup.string().min(6).required(),
+})
+
+function LogIn(props) {
+  const {location, isAuthenticated, authorize} = props
+  const {register, errors, formState, handleSubmit} = useForm({validationSchema})
+
+  const getMessages = R.pipe(
+    R.merge(props.errors),
+    R.values,
+    R.pluck(`message`),
+    R.when(
+      R.isEmpty,
+      R.append(defMessage(formState)),
+    )
+  )
+
   if (isAuthenticated) {
     return <Redirect to={url(location)}/>
   }
 
-  const state = useState({email: `admin`, password: `123`})
-
-  const onSubmit = event => {
-    event.preventDefault()
-    const [{email, password}] = state
-    authorize(email, password)
-  }
-
-
   return (
-    <Top_ {...rest}>
-      {/* <Title>Log in</Title> */}
+    <Form onSubmit={handleSubmit(authorize)}>
       <AmosChat>
-        {messages}
+        {getMessages(errors)}
       </AmosChat>
-      <Input state={state} id={'Input1'}>
-        Email
-      </Input>
-      <Input state={state} type={`password`}>
-        Password
-      </Input>
-      {/* TODO: Conditional show */}
-      <AmosChat avatar={'none'}>
-        I don't know that email, password combination. 🙁
-      </AmosChat>
-      <Button primary onClick={onSubmit}>
+      <Input
+        hasError={errors.email}
+        label="Email"
+        name="email"
+        placeholder="Email"
+        ref={register({required: true})}
+      />
+      <Input
+        hasError={errors.password}
+        label="Password"
+        name="password"
+        placeholder="Password"
+        type="password"
+        ref={register}
+      />
+      <Link to="/forgot-password">Forgot password</Link>
+      <Button primary type="submit">
         Log in
       </Button>
       <AuthOptions
         first={{
-          link: '/sign-up',
-          text: 'Use social'
+          link: `/sign-up`,
+          text: `Use social`
         }}
         second={{
-          link: '/sign-up/email',
-          text: 'Sign up'
-        }}/>
-    </Top_>
+          link: `/sign-up/email`,
+          text: `Sign up`
+        }}
+      />
+    </Form>
   )
 }
 

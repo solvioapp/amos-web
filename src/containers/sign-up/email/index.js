@@ -14,13 +14,13 @@ const Email = ({login, ...rest}) => {
       <AmosChat>
         Once you sign up, you'll be able to get reputation for your Reviews. And it's free!
       </AmosChat>
-      <Input state={state}>
+      <Input>
         Email
-        </Input>
-      <Input state={state} type={'password'}>
+      </Input>
+      <Input type={'password'}>
         Password
       </Input>
-      <Input state={state} type={'password'}>
+      <Input type={'password'}>
         Repeat password
       </Input>
       {/* TODO: Conditional show */}

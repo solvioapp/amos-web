@@ -1,15 +1,21 @@
 import {AUTHORIZE, LOGOUT} from './actions'
 import {put, takeEvery} from 'redux-saga/effects'
-import {setIsAuth} from './actions'
+import {setErrors, setIsAuth} from './actions'
 
-function* authorize(action) {
+function* authorize({email, password}) {
   // fake authorization
   const isAuth = (
-    action.email === `admin` &&
-    action.password === `123`
+    email === `demo@example.com` &&
+    password === `demo123`
   )
 
-  yield put(setIsAuth(isAuth))
+  if (!isAuth) {
+    const message = `I don't know that email, password combination. 🙁`
+    const error = {allfields: {message}}
+    return yield put(setErrors(error))
+  }
+
+  yield put(setIsAuth(true))
 }
 
 function* logout() {
