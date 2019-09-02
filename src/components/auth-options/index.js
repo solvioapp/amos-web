@@ -8,7 +8,7 @@ const AuthOptions = ({
     text: 'Sign up'
   }, 
   second = {
-    link: '/log-in',
+    link: '/login',
     text: 'Log in'
   }
 }, ...rest) => {

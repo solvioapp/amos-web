@@ -7,3 +7,8 @@ export const selectIsAuthenticated = createSelector(
   selectAuth,
   R.prop(`isAuthenticated`)
 )
+
+export const selectErrors = createSelector(
+  selectAuth,
+  R.prop(`errors`)
+)

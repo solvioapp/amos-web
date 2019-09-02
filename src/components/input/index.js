@@ -1,29 +1,16 @@
-import React from 'react'
-import Top_ from './top.sc'
 import Input_ from './input.sc'
 import Label_ from './label.sc'
-import * as R from 'ramda'
+import React from 'react'
+import Top_ from './top.sc'
 
-const Input = ({state: [state, setState] = [{}], children: name, type = 'text', ...rest}) => {
-  const onChange = event => {
-    const newState = R.merge(
-      state,
-      {[name]: event.target.value}
-    )
-    setState(newState)
-  }
+const Input = ({label, ...props}, ref) => (
+  <Top_>
+    <Label_>{label}</Label_>
+    <Input_
+      ref={ref}
+      {...props}
+    />
+  </Top_>
+)
 
-  return (
-    <Top_ {...rest}>
-      <Label_>{name}</Label_>
-      <Input_ 
-        placeholder={name}
-        type={type}
-        value={state[name]}
-        onChange={onChange}
-      />
-    </Top_>
-  )
-}
-
-export default Input
+export default React.forwardRef(Input)

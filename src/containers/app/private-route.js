@@ -3,7 +3,7 @@ import connect from './connect'
 import {Redirect, Route} from 'react-router-dom'
 
 const destUrl = props => ({
-  pathname: `/log-in`,
+  pathname: `/login`,
   state: {from: props.location.pathname}
 })
 
