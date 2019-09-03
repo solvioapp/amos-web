@@ -3,11 +3,12 @@ import Label_ from './label.sc'
 import React from 'react'
 import Top_ from './top.sc'
 
-const Input = ({label, ...props}, ref) => (
+const Input = ({label, children, ...props}, ref) => (
   <Top_>
     <Label_>{label}</Label_>
     <Input_
       ref={ref}
+      placeholder={typeof children === `string` ? children : ``}
       {...props}
     />
   </Top_>
