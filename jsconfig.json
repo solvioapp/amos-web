@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "ClientApp/*": [
+                "./ClientApp/*"
+            ],
+            "root/*": [
+                "./*"
+            ],
+            "common/*": [
+                "./src/common/*"
+            ],
+            "components/*": [
+                "./src/components/*"
+            ],
+            "containers/*": [
+                "./src/containers/*"
+            ],
+            "store/*": [
+                "./src/store/*"
+            ],
+            "constants/*": [
+                "./src/constants/*"
+            ]
+        }
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
