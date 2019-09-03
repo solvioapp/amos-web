@@ -36,6 +36,15 @@ const Top_ = styled.button`
   user-select: none;
   width: ${prop(`width`, `auto`)};
 
+  &:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    
+    &:hover {
+      background-color:grey;
+    }
+  }
+
   > ${Icon} {
     height: 15px;
   }
