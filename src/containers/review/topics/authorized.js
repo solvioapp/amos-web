@@ -4,8 +4,9 @@ import Title from 'components/title'
 import Input from 'components/input'
 import Buttons from '../buttons.sc'
 import Top_ from '../top.sc'
-import InputForm_ from '../input-form.sc';
+import InputForm_ from '../input-form.sc'
 import {navto} from 'common/history'
+import Topics from './TopicList'
 import React from 'react'
 
 const messages = [
@@ -20,7 +21,7 @@ const Authorized = ({...rest}) => (
     </AmosChat>
     <InputForm_>
       <Title>Topics</Title>
-      <Input />
+      <Topics />
       <Buttons>
         <Button onClick={navto(`/review/links`)}>
           Previous

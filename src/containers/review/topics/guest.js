@@ -1,11 +1,11 @@
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
-import Input from 'components/input'
 import Title from 'components/title'
 import Buttons from '../buttons.sc'
-import InputForm_ from '../input-form.sc';
+import InputForm_ from '../input-form.sc'
 import Top_ from '../top.sc'
 import {navto} from 'common/history'
+import Topics from './TopicList'
 import React from 'react'
 
 const Guest = ({...rest}) => (
@@ -16,7 +16,7 @@ const Guest = ({...rest}) => (
     </AmosChat>
     <InputForm_>
       <Title>Topics</Title>
-      <Input />
+      <Topics/>
       <Buttons>
         <Button onClick={navto(`/review/links`)}>
           Previous
