@@ -1,18 +1,27 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import Input from 'components/input'
 import IncrementalInputs from 'components/incrementalInputs'
 
-const initLinks = [``]
-const makeEmptyLink = () => ``
-const isLinkEmpty = link => link === ``
+import {string} from 'yup'
+const urlSchema = string().url().required()
 
-const renderLink = ({item, index, changeItem}) =>
-  <Input key={index} value={item} onChange={changeItem} />
+const props = {
+  initItems: [``],
+  makeNewItem: () => ``,
+  isItemEmpty: link => link === ``,
+  // eslint-disable-next-line no-sync
+  isItemComplete: link => urlSchema.isValidSync(link),
+}
+
+const LinkInput = ({item, index, changeItem}) => {
+
+  const onChange = useCallback(e => changeItem(e.target.value), [changeItem])
+
+  return <Input key={index} value={item} onChange={onChange} />
+}
 
 const LinksURLs = () => (
-  <IncrementalInputs initState={initLinks} makeNewItem={makeEmptyLink} isItemEmpty={isLinkEmpty}>
-    {renderLink}
-  </IncrementalInputs>
+  <IncrementalInputs {...props} component={LinkInput}/>
 )
 
 export default LinksURLs

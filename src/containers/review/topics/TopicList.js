@@ -1,18 +1,23 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import Input from 'components/input'
 import IncrementalInputs from 'components/incrementalInputs'
 
-const initTopics = [``]
-const makeEmptyTopic = () => ``
-const isTopicEmpty = topic => topic === ``
+const props = {
+  initItems: [``],
+  makeNewItem: () => ``,
+  isItemEmpty: link => link === ``,
+  isItemComplete: Boolean,
+}
 
-const renderTopic = ({item, index, changeItem}) =>
-  <Input key={index} value={item} onChange={changeItem} />
+const TopicInput = ({item, index, changeItem}) => {
+
+  const onChange = useCallback(e => changeItem(e.target.value), [changeItem])
+
+  return <Input key={index} value={item} onChange={onChange} />
+}
 
 const TopicList = () => (
-  <IncrementalInputs initState={initTopics} makeNewItem={makeEmptyTopic} isItemEmpty={isTopicEmpty}>
-    {renderTopic}
-  </IncrementalInputs>
+  <IncrementalInputs {...props} component={TopicInput}/>
 )
 
 export default TopicList
