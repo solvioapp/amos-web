@@ -3,7 +3,8 @@ import Button from 'components/button'
 import Title from 'components/title'
 import Top_ from '../top.sc'
 import InputForm_ from '../input-form.sc'
-import {navto} from 'common/history'
+
+import {useReqState} from './'
 import LinkURLS from './LinkURLs'
 import React from 'react'
 
@@ -14,17 +15,19 @@ const messages = [
   `Let's start with the links. Please enter the  URLs that lead to the resource 😇`
 ]
 
-const Authorized = ({rest}) => (
-  <Top_ {...rest}>
+const Authorized = ({rest}) => {
+  const {setLinks, initItems, goNext} = useReqState()
+
+  return <Top_ {...rest}>
     <AmosChat>{messages}</AmosChat>
     <InputForm_>
       <Title>Links</Title>
-      <LinkURLS/>
-      <Button primary onClick={navto(`/review/topics`)}>
+      <LinkURLS onUpdate={setLinks} initItems={initItems}/>
+      <Button primary onClick={goNext}>
         Next
       </Button>
     </InputForm_>
   </Top_>
-)
+}
 
 export default Authorized
