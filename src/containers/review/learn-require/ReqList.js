@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef} from 'react'
+import React, {useCallback, useEffect, useRef, useMemo} from 'react'
 import Input from 'components/input'
 import IncrementalInputs from 'components/incrementalInputs'
 import RadioGroup, {RadioGroupHead} from 'components/radioGroup'
@@ -24,6 +24,12 @@ const radioNecessity = {
     },
   ]
 }
+
+const makeNecessityProps = checkedValue => ({
+  ...radioNecessity,
+  checkedValue,
+})
+
 const radioKnowledge = {
   title: `for people to be at least:`,
   name: `knowledge-level`,
@@ -46,6 +52,10 @@ const radioKnowledge = {
     },
   ]
 }
+const makeKnowledgeProps = checkedValue => ({
+  ...radioKnowledge,
+  checkedValue,
+})
 
 const reqSchema = object().shape({
   'necessity-level': string().oneOf(map(prop(`value`), radioNecessity.elements)).required(),
@@ -70,8 +80,7 @@ export const RequirementsForm = styled.form`
     }
 `
 
-const RequirementInput = ({changeItem}) => {
-
+const RequirementInput = ({changeItem, item, index}) => {
   const onChange = useCallback(e => {
     const formData = new FormData(e.currentTarget)
     const data = fromPairs(Array.from(formData.entries()))
@@ -81,23 +90,43 @@ const RequirementInput = ({changeItem}) => {
   const formRef = useRef()
 
   useEffect(() => {
-    formRef.current && formRef.current.scrollIntoView({block: `center`, behavior: `smooth`})
+    index > 0 && formRef.current &&
+        formRef.current.scrollIntoView({block: `center`, behavior: `smooth`})
   }, [])
+
+  const necessityProps = useMemo(
+    () => makeNecessityProps(item[`necessity-level`]),
+    [item[`necessity-level`]]
+  )
+  const knowledgeProps = useMemo(
+    () => makeKnowledgeProps(item[`knowledge-level`]),
+    [item[`necessity-level`]]
+  )
 
   return (
     <RequirementsForm onChange={onChange} ref={formRef}>
-      <RadioGroup {...radioNecessity}/>
-      <RadioGroup {...radioKnowledge}/>
+      <RadioGroup {...necessityProps}/>
+      <RadioGroup {...knowledgeProps}/>
       <div>
         <RadioGroupHead>in:</RadioGroupHead>
-        <Input name="topic" />
+        <Input name="topic" defaultValue={item.topic}/>
       </div>
     </RequirementsForm>
   )
 }
 
-const RequirementsList = () => (
-  <IncrementalInputs {...props} component={RequirementInput} />
-)
+const chooseInitItems = (defaults, fromParent) =>
+  fromParent.initItems.length ? fromParent.initItems : defaults.initItems
+
+const RequirementsList = ({onUpdate, initItems}) => {
+  const initItems_ = useMemo(() => chooseInitItems(props, {initItems}), [initItems.length])
+
+  return <IncrementalInputs
+    {...props}
+    component={RequirementInput}
+    onUpdate={onUpdate}
+    initItems={initItems_}
+  />
+}
 
 export default RequirementsList
