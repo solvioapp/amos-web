@@ -4,32 +4,34 @@ import Title from 'components/title'
 import Buttons from '../buttons.sc'
 import InputForm_ from '../input-form.sc'
 import Top_ from '../top.sc'
-import {navto} from 'common/history'
 import Topics from './TopicList'
 import React from 'react'
 
-const Guest = ({...rest}) => (
-  <Top_ {...rest}>
+import {useReqState} from './'
+
+const Guest = ({...rest}) => {
+  const {goPrev, goNext, goFinish, setTopics, initItems} = useReqState()
+  return <Top_ {...rest}>
     <AmosChat>
       What topics is the resource on?
       Try to be as specific as possible to get the most Rep.
     </AmosChat>
     <InputForm_>
       <Title>Topics</Title>
-      <Topics/>
+      <Topics onUpdate={setTopics} initItems={initItems}/>
       <Buttons>
-        <Button onClick={navto(`/review/links`)}>
+        <Button onClick={goPrev}>
           Previous
         </Button>
-        <Button primary onClick={navto(`/review/requirements`)}>
+        <Button primary onClick={goNext}>
           Next
         </Button>
-        <Button>
+        <Button onClick={goFinish}>
           Finish
         </Button>
       </Buttons>
     </InputForm_>
   </Top_>
-)
+}
 
 export default Guest
