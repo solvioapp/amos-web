@@ -14,14 +14,21 @@ const props = {
 }
 
 const LinkInput = ({item, index, changeItem}) => {
-
   const onChange = useCallback(e => changeItem(e.target.value), [changeItem])
 
   return <Input key={index} value={item} onChange={onChange} />
 }
 
-const LinksURLs = () => (
-  <IncrementalInputs {...props} component={LinkInput}/>
+const chooseInitItems = (defaults, fromParent) =>
+  fromParent.initItems.length ? fromParent.initItems : defaults.initItems
+
+const LinksURLs = ({onUpdate, initItems}) => (
+  <IncrementalInputs
+    {...props}
+    component={LinkInput}
+    onUpdate={onUpdate}
+    initItems={chooseInitItems(props, {initItems})}
+  />
 )
 
 export default LinksURLs

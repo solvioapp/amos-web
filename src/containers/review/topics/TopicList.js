@@ -16,8 +16,16 @@ const TopicInput = ({item, index, changeItem}) => {
   return <Input key={index} value={item} onChange={onChange} />
 }
 
-const TopicList = () => (
-  <IncrementalInputs {...props} component={TopicInput}/>
+const chooseInitItems = (defaults, fromParent) =>
+  fromParent.initItems.length ? fromParent.initItems : defaults.initItems
+
+const TopicList = ({onUpdate, initItems}) => (
+  <IncrementalInputs
+    {...props}
+    component={TopicInput}
+    onUpdate={onUpdate}
+    initItems={chooseInitItems(props, {initItems})}
+  />
 )
 
 export default TopicList
