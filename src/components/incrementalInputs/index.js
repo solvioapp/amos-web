@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useCallback, useRef} from 'react'
 
 import {update, pipe, append, ifElse, any, identity} from 'ramda'
 
@@ -26,15 +26,34 @@ const IncrementalInputs = ({
   render,
   children,
   component: Component,
+  onUpdate,
 }) => {
   const [items, setItems] = useState(initItems)
 
   const renderFunc = render || children
   if (!renderFunc && !Component) return null
 
+  useEffect(() => {
+    onUpdate && items !== initItems && onUpdate(items)
+  }, [items, onUpdate])
+
+  const appendIfNecessary = useCallback(
+    ifElse(
+      any(item => isItemEmpty(item) || !isItemComplete(item)), identity, append(makeNewItem())
+    ),
+    [isItemEmpty, makeNewItem]
+  )
+
+  const mounted = useRef()
+  useEffect(() => {
+    mounted.current = true
+  }, [])
+
+  const finalItems = mounted.current ? items : appendIfNecessary(items)
+
   return (
     <>
-      {items.map((item, index) => {
+      {finalItems.map((item, index) => {
         const props = {
           item,
           index,
@@ -42,6 +61,7 @@ const IncrementalInputs = ({
             index,
             setItems,
             makeNewItem,
+            appendIfNecessary,
             isItemEmpty,
             isItemComplete
           })
@@ -51,7 +71,7 @@ const IncrementalInputs = ({
 
         const key = (typeof item === `object` && item.key) || index
 
-        return <Component {...props} key={key}/>
+        return <Component {...props} key={key} />
       })}
     </>
   )
