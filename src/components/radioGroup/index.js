@@ -35,14 +35,19 @@ export const RadioGroupHead = styled.div`
     margin: 0.5em;
 `
 
-const RadioGroup = ({title, name, elements = []}) => {
+const RadioGroup = ({title, name, elements = [], checkedValue}) => {
   return (
     <div>
       {title && <RadioGroupHead>{title}</RadioGroupHead>}
       <RadioList>
         {elements.map(el => (
           <label key={el.value}>
-            <input type="radio" name={name} value={el.value} />
+            <input
+              type="radio"
+              name={name}
+              value={el.value}
+              defaultChecked={el.value === checkedValue}
+            />
             {el.text}
           </label>
         ))}
