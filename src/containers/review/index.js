@@ -2,7 +2,7 @@ import * as R from 'ramda'
 import Guest from './guest'
 import LearnRequire from './learn-require'
 import Links from './links'
-import React, {useState, useMemo, useContext} from 'react'
+import React, {useState, useMemo, useContext, useEffect, useRef} from 'react'
 import Thanks from './thanks'
 import Topics from './topics'
 import connect from './connect'
@@ -23,7 +23,8 @@ const redirect = R.both(
   R.pathEq([`location`, `pathname`], `/review`)
 )
 
-const makeSetterF = ({prop, setReview}) => (val, done = false) => {
+const makeSetterF = ({prop, setReview, unmounted}) => (val, done = false) => {
+  if (unmounted.current) return
   setReview(state => {
     const newState = {...state, [prop]: val, done}
     // TODO: remove logs
@@ -36,12 +37,20 @@ function Review(props) {
 
   const [review, setReview] = useState(initReview)
 
+  const unmounted = useRef(false)
+
+  useEffect(() => () => unmounted.current = true, [])
+
   const contextValue = useMemo(() => ({
-    setLinks: makeSetterF({prop: `links`, setReview}),
-    setTopics: makeSetterF({prop: `topics`, setReview}),
-    setRequirements: makeSetterF({prop: `requirements`, setReview}),
-    // TODO: change alert for fetch-like logic
-    submitReview: () => alert(`Submitting review: ${JSON.stringify(review, null, 2)}`),
+    setLinks: makeSetterF({prop: `links`, setReview, unmounted}),
+    setTopics: makeSetterF({prop: `topics`, setReview, unmounted}),
+    setRequirements: makeSetterF({prop: `requirements`, setReview, unmounted}),
+    submitReview: () => {
+      // TODO: change alert for fetch-like logic
+      alert(`Submitting review: ${JSON.stringify(review, null, 2)}`)
+      if (unmounted.current) return
+      setReview(initReview)
+    },
     ...review,
   }), [review])
 
