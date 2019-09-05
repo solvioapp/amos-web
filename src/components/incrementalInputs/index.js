@@ -2,43 +2,58 @@ import React, {useState} from 'react'
 
 import {update, pipe, append, ifElse, any, identity} from 'ramda'
 
-const changeItems = ({index, setItems, makeNewItem, isItemEmpty}) =>
-  ({target}) => setItems(
+const changeItems = ({index, setItems, makeNewItem, isItemEmpty, isItemComplete}) =>
+  newItem => setItems(
     pipe(
-      update(index, target.value),
-      updatedItems => updatedItems.filter((item, i) => i === index || !isItemEmpty(item)),
-      ifElse(any(isItemEmpty), identity, append(makeNewItem())),
+      update(index, newItem),
+      ifElse(
+        () => isItemEmpty(newItem) || isItemComplete(newItem),
+        pipe(
+          updatedItems => updatedItems.filter((item, i) => i === index || !isItemEmpty(item)),
+          ifElse(any(isItemEmpty), identity, append(makeNewItem()))
+        ),
+        identity
+      )
+      ,
     )
   )
 
 const IncrementalInputs = ({
-  initState = [],
+  initItems = [],
   makeNewItem = identity,
   isItemEmpty = () => false,
+  isItemComplete = Boolean,
   render,
-  children
+  children,
+  component: Component,
 }) => {
-  const [items, setItems] = useState(initState)
+  const [items, setItems] = useState(initItems)
 
   const renderFunc = render || children
-  if (!renderFunc) return null
+  if (!renderFunc && !Component) return null
 
   return (
-        <>
-            {items.map((item, index) => {
-              const props = {
-                item,
-                index,
-                changeItem: changeItems({
-                  index,
-                  setItems,
-                  makeNewItem,
-                  isItemEmpty
-                })
-              }
-              return renderFunc(props)
-            })}
-        </>
+    <>
+      {items.map((item, index) => {
+        const props = {
+          item,
+          index,
+          changeItem: changeItems({
+            index,
+            setItems,
+            makeNewItem,
+            isItemEmpty,
+            isItemComplete
+          })
+        }
+
+        if (renderFunc) return renderFunc(props)
+
+        const key = (typeof item === `object` && item.key) || index
+
+        return <Component {...props} key={key}/>
+      })}
+    </>
   )
 }
 
