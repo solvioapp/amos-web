@@ -1,18 +1,13 @@
 import Title from 'components/title'
 import AmosChat from 'components/amos-chat'
 import Button from 'components/button'
-import Input from 'components/input'
-import Radio from 'components/radio'
 import Buttons_ from '../buttons.sc'
 import Top_ from '../top.sc'
-import InputForm_ from '../input-form.sc';
+import InputForm_ from '../input-form.sc'
 import {navto} from 'common/history'
 import React from 'react'
 
-const radioOptions = [
-  () => <span>think it would be <i>helpful</i></span>,
-  () => <span>would <i>recommend</i></span>,
-]
+import ReqList from './ReqList'
 
 const Guest = ({...rest}) => (
   <Top_ {...rest}>
@@ -22,8 +17,7 @@ const Guest = ({...rest}) => (
     </AmosChat>
     <InputForm_>
       <Title>Learning requirements</Title>
-      <Radio>{radioOptions}</Radio>
-      <Input />
+      <ReqList/>
       <Buttons_>
         <Button onClick={navto(`/review/topics`)}>
           Previous

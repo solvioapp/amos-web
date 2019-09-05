@@ -4,9 +4,11 @@ import Button from 'components/button'
 import Input from 'components/input'
 import Buttons from '../buttons.sc'
 import Top_ from '../top.sc'
-import InputForm_ from '../input-form.sc';
+import InputForm_ from '../input-form.sc'
 import {navto} from 'common/history'
 import React from 'react'
+
+import ReqList from './ReqList'
 
 const Authorized = ({...rest}) => (
   <Top_ {...rest}>
@@ -16,7 +18,7 @@ const Authorized = ({...rest}) => (
     </AmosChat>
     <InputForm_>
       <Title>Learning requirements</Title>
-      <Input/>
+      <ReqList/>
       <Buttons>
         <Button onClick={navto(`/review/topics`)}>
           Previous
